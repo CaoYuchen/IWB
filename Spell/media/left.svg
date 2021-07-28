@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="55px" viewBox="0 0 48 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>timerbtn/adjust arrow down copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.210759175 0 54.1184515 0 54.1184515 48 0.210759175 48"></polygon>
+    </defs>
+    <g id="Open-Lesson-2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="book-2" transform="translate(-359.000000, -388.000000)">
+            <g id="timerbtn/adjust-arrow-down-copy-4" transform="translate(383.000000, 415.323077) scale(-1, -1) rotate(90.000000) translate(-383.000000, -415.323077) translate(355.676923, 391.323077)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M20.7262881,4.87170868 C24.28051,-1.62955166 30.0515023,-1.61825167 33.6001823,4.87170868 L52.6311562,36.2329448 C56.1853781,42.7342051 53.1520973,48 45.8478388,48 L8.4786316,48 C1.17622041,48 -1.85336581,42.7229051 1.69531415,36.2329448 L20.7262881,4.87170868 Z" id="Fill-1" fill="#23809E" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

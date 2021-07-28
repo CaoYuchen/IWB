@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 379 153.5" style="enable-background:new 0 0 379 153.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#filter-2);}
+	.st1{fill:#FFFFFF;}
+	.st2{filter:url(#filter-4);}
+	.st3{filter:url(#filter-6);}
+	.st4{fill:#FF905F;}
+	.st5{font-family:'Arial-BoldMT';}
+	.st6{font-size:50px;}
+	.st7{fill:#50E3C2;}
+	.st8{fill:#F8E71C;}
+</style>
+<filter  filterUnits="objectBoundingBox" height="107.5%" id="filter-6" width="116.8%" x="-7.5%" y="-2.2%">
+	<feOffset  dx="1" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+	<feGaussianBlur  in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"></feGaussianBlur>
+	<feColorMatrix  in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.117498868 0">
+		</feColorMatrix>
+</filter>
+<filter  filterUnits="objectBoundingBox" height="107.5%" id="filter-4" width="116.8%" x="-7.5%" y="-2.2%">
+	<feOffset  dx="1" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+	<feGaussianBlur  in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"></feGaussianBlur>
+	<feColorMatrix  in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.117498868 0">
+		</feColorMatrix>
+</filter>
+<filter  filterUnits="objectBoundingBox" height="107.5%" id="filter-2" width="116.8%" x="-7.5%" y="-2.2%">
+	<feOffset  dx="1" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+	<feGaussianBlur  in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"></feGaussianBlur>
+	<feColorMatrix  in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.117498868 0">
+		</feColorMatrix>
+</filter>
+<title>Group 7 Copy</title>
+<desc>Created with Sketch.</desc>
+<g>
+	<g id="Color-Copy-3">
+		<g class="st0">
+			<polygon id="path-1_2_" points="4,1 117,1 117,151 4,151 			"/>
+		</g>
+		<g>
+			<polygon id="path-1_1_" class="st1" points="4,1 117,1 117,151 4,151 			"/>
+		</g>
+	</g>
+	<g id="Color-Copy-4">
+		<g class="st2">
+			<polygon id="path-3_2_" points="132,1 245,1 245,151 132,151 			"/>
+		</g>
+		<g>
+			<polygon id="path-3_1_" class="st1" points="132,1 245,1 245,151 132,151 			"/>
+		</g>
+	</g>
+	<g id="Color-Copy-11">
+		<g class="st3">
+			<polygon id="path-5_2_" points="260,1 373,1 373,151 260,151 			"/>
+		</g>
+		<g>
+			<polygon id="path-5_1_" class="st1" points="260,1 373,1 373,151 260,151 			"/>
+		</g>
+	</g>
+	<text transform="matrix(1 0 0 1 173 102.0361)" class="st4 st5 st6">B</text>
+	<text transform="matrix(1 0 0 1 297.6 102.0361)" class="st7 st5 st6">C</text>
+	<text transform="matrix(1 0 0 1 42.475 102.0361)" class="st8 st5 st6">A</text>
+	<rect id="Rectangle-Copy-2" x="4" y="1" class="st8" width="113" height="11"/>
+	<rect id="Rectangle-Copy-3" x="132" y="1" class="st4" width="113" height="11"/>
+	<rect id="Rectangle-Copy-9" x="260" y="1" class="st7" width="113" height="11"/>
+</g>
+</svg>

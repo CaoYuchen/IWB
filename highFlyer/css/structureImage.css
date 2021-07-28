@@ -1,0 +1,69 @@
+#chapter3 > [data-value="page2"] .pinCanvas{
+	left: 610px;
+	top: 8px;
+}
+
+#chapter3 > [data-value="page3"] .pinCanvas{
+	left: 605px;
+	top: -25px;
+}
+
+#chapter3 > [data-value="page4"] .pinCanvas{
+	left: 605px;
+	top: -25px;
+}
+
+
+#chapter3 > [data-value="page7"] > .imageTitle:nth-child(2){
+	margin-top: -320px;
+}
+#chapter3 > [data-value="page7"] > .imageTitle:nth-child(3){
+	margin-top: -155px;
+}
+#chapter3 > [data-value="page7"] > .imageTitle:nth-child(4){
+	margin-top: 60px;
+}
+
+#chapter3 > [data-value="page7"] > .imageTitle img{
+	margin: 0 47px;
+}
+
+
+
+#chapter3 > [data-value="page5"] > .imageTitle{
+	width:1600px;
+	margin-left: -800px;
+	margin-top: -330px;
+}
+#chapter3 > [data-value="page5"] > .imageTitle .structureMid {
+	margin-top: 100px;
+}
+
+#chapter3 > [data-value="page6"] > .imageTitle{
+	width:1600px;
+	margin-left: -800px;
+	margin-top: -250px;
+}
+#chapter3 > [data-value="page6"] > .imageTitle .structureMid {
+	margin-top:50px;
+}
+
+#chapter3 > [data-value="page8"] > .imageTitle{
+	width:1600px;
+	margin-left: -800px;
+	margin-top: -250px;
+}
+#chapter3 > [data-value="page8"] > .imageTitle .structureMid {
+	margin-top:0px;
+}
+
+#chapter3 > [data-value="page9"] > .imageTitle{
+	width:1600px;
+	margin-left: -800px;
+	margin-top: -250px;
+}
+
+
+
+
+

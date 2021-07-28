@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="424px" height="754px" viewBox="0 0 424 754" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>SS-4-SB-Unit-7-Intro-page Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-4.4%" y="-2.0%" width="108.9%" height="104.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.179796766 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-2" x="0" y="5.68434189e-14" width="406" height="736" rx="10"></rect>
+        <filter x="-2.6%" y="-1.0%" width="105.2%" height="102.9%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Open-Lesson-2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Student-page-Copy-3" transform="translate(-154.000000, -267.000000)">
+            <g id="SS-4-SB-Unit-7-Intro-page-Copy-4" filter="url(#filter-1)" transform="translate(163.000000, 273.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <g id="Mask">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+                    <use fill-opacity="0.6" fill="#E7E7E7" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

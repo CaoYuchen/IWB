@@ -1,0 +1,179 @@
+<!--
+    Winhweel.js one image per segment wheel example by Douglas McKechie @ www.dougtesting.net
+    See website for tutorials and other documentation.
+
+    The MIT License (MIT)
+
+    Copyright (c) 2016 Douglas McKechie
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+-->
+<html>
+
+<head>
+    <title>Spinner</title>
+    <link rel="stylesheet" href="../css/spin.css" type="text/css">
+    <script type="text/javascript" src="../js/Winwheel.js"></script>
+    <script src="../js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+    <div align="center">
+        <div class="spinner">
+            <div class="the_wheel" width="901px" height="901px">
+                <canvas id="canvas" width="700" height="700"></canvas>     
+            </div>  
+            <img id="arrow" src="../media/arrow.svg" width="108px" height="108px">        
+        </div>
+        <br>
+        <div class="textbar">
+            <img id="textbar" src="../media/textbar.svg" width="872px" height="223px">
+            <input id="name" type="text" value="" maxlength="10" readonly="readonly">
+            <button id="spin_button"><img src="../media/stargrey.svg" width="104px" onClick="startSpin()"></button>
+        </div>
+    </div>
+        <!-- <div class="plate">
+            <input id="name" type="text" value="" maxlength="10" readonly="readonly"> <span>|</span>
+            <button class="ripple"><img id="spin_button" class="clickable" src="../media/star.svg" width="104px" alt="Spin" onClick="startSpin()"></button>
+        </div> -->
+    <script>
+    // Create new wheel object specifying the parameters at creation time.
+    let theWheel = new Winwheel({
+        'numSegments': 6, // Specify number of segments.
+        'outerRadius': 200, // Set outer radius so wheel fits inside the background.
+        'drawText': false, // Code drawn text can be used with segment images.
+        'textFontSize': 16,
+        'textOrientation': 'curved',
+        'textAlignment': 'inner',
+        'textMargin': 90,
+        'textFontFamily': 'monospace',
+        'textStrokeStyle': 'black',
+        'textLineWidth': 3,
+        'textFillStyle': 'white',
+        'responsive': true,
+        'rotationAngle':330,
+        'drawMode': 'segmentImage', // Must be segmentImage to draw wheel using one image per segemnt.
+        'imageDirection' : 'N',
+        'scaleFactor':1,
+        'segments': // Define segments including image and text.
+            [
+                { 'image': '../media/face.png', 'text': 'Face' },
+                { 'image': '../media/eyes.png', 'text': 'Eyes' },
+                { 'image': '../media/nose.png', 'text': 'Nose' },
+                { 'image': '../media/mouth.png', 'text': 'Mouth' },
+                { 'image': '../media/ears.png', 'text': 'Ears' },
+                { 'image': '../media/hair.png', 'text': 'Hair' },
+            ],
+        'animation': // Specify the animation to use.
+        {
+            'type': 'spinToStop',
+            'stopAngle': 30,
+            'duration': 5, // Duration in seconds.
+            'spins': 15, // Number of complete spins.
+            'callbackFinished': alertPrize
+        }
+    });
+
+    // Vars used by the code in this page to do power controls.
+    let wheelPower = 3;
+    let wheelSpinning = false;
+    //alarm when spinning
+    var alarm = new Audio("../media/alarm.mp3");
+    alarm.loop = true;
+    // -------------------------------------------------------
+    // Click handler for spin button.
+    // -------------------------------------------------------
+    function startSpin() {
+        // Ensure that spinning can't be clicked again while already running.
+        if (wheelSpinning == false) {
+            // Based on the power level selected adjust the number of spins for the wheel, the more times is has
+            // to rotate with the duration of the animation the quicker the wheel spins.
+            if (wheelPower == 1) {
+                theWheel.animation.spins = 3;
+            } else if (wheelPower == 2) {
+                theWheel.animation.spins = 8;
+            } else if (wheelPower == 3) {
+                theWheel.animation.spins = 15;
+            }
+
+            alarm.play();
+
+            rand = Math.floor(Math.random() * 6);
+            theWheel.animation.stopAngle = rand*60+30;
+            // console.log(rand*60+30);
+
+            // Disable the spin button so can't click again while wheel is spinning.
+            // document.getElementById('spin_button').src = "./media/spin_off.png";
+            // document.getElementById('spin_button').className = "";
+
+            // Begin the spin animation by calling startAnimation on the wheel object.
+            theWheel.startAnimation();
+            document.getElementById('name').value = "";
+            $('#spin_button').find('img').attr('src','../media/starblue.svg');
+
+            // Set to true so that power can't be changed and spin button re-enabled during
+            // the current animation. The user will have to reset before spinning again.
+            wheelSpinning = true;
+        }
+    }
+
+    // -------------------------------------------------------
+    // Function for reset button.
+    // -------------------------------------------------------
+    function resetWheel() {
+        theWheel.stopAnimation(false); // Stop the animation, false as param so does not call callback function.
+        theWheel.rotationAngle = 0; // Re-set the wheel angle to 0 degrees.
+        // theWheel.draw();                // Call draw to render changes to the wheel.
+        $('#spin_button').find('img').attr('src','../media/stargrey.svg');
+        wheelSpinning = false; // Reset to false to power buttons and spin can be clicked again.
+    }
+
+    // -------------------------------------------------------
+    // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
+    // note the indicated segment is passed in as a parmeter as 99% of the time you will want to know this to inform the user of their prize.
+    // -------------------------------------------------------
+    function alertPrize(indicatedSegment) {
+        // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
+        // alert(indicatedSegment.text + ' says Hi');
+        document.getElementById('name').value = indicatedSegment.text;
+        // document.getElementById('spin_button').src = "./media/spin_on.png";
+        // document.getElementById('spin_button').className = "clickable";
+        alarm.pause();
+        alarm.currentTime = 0;
+        resetWheel();
+    }
+    </script>
+
+    <script>
+    $(function(){
+        document.oncontextmenu = function(){
+            return false;
+        }
+        document.onselectstart = function() {
+            return false;
+        }
+        document.onselectstart = function(){
+            return false;
+        }
+    })
+    </script>
+</body>
+
+</html>

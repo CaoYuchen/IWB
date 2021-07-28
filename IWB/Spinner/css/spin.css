@@ -1,0 +1,138 @@
+/*
+Description:
+    Contains all the styles for the winning wheel page.
+    
+Verison History:
+    2012-01-28, Douglas McKechie
+    - Created based off earlier version.
+    
+    2015-09-26, Douglas McKechie
+    - Minor updates for the 2.0 winwheel example.
+*/
+@font-face {
+  font-family: SofiaProSoftBold;
+  src: url(SofiaProSoftBold.otf);
+}
+
+body
+{
+    font-family: SofiaProSoftBold;
+}
+
+button {
+    outline: none;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Sets the background image for the wheel */
+.the_wheel
+{
+    background-image: url(../media/wheel_back.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 48px 112px 20px 150px;
+    margin-bottom: -80px;
+    /*margin-top: 200px;*/
+}
+
+.plate{
+    background-color: #e2e3ddfa;
+    border-radius: 60px;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.plate span{
+    font-size: 60px;
+    margin:0 15px 20px 15px;
+    font-weight:50;
+    color:#c8c5c5;
+}
+
+.plate button{
+    background-color: #acacac;
+    border-radius: 50%;
+    margin:10px 10px 0 0;
+    float:right;
+}
+
+.plate img{
+    margin:10px 5px;
+}
+
+.plate input{
+    width:600px;
+    outline: none;
+    border: 9px solid #ffd35c;
+    border-radius: 50px;
+    overflow: hidden;
+    text-align: center;
+    font-weight: bold;
+    font-size: 60px;
+    margin:10px 0 15px 15px;
+
+}
+/* Do some css reset on selected elements */
+h1, p
+{
+    margin: 0;
+}
+
+.spinner{
+    position: relative;
+    display: inline-block;
+}
+
+#arrow{
+    position: absolute;
+    z-index: 2;
+    right: 42.7%;
+    top: 5px;
+}
+
+.textbar{
+    position: relative;
+    display: inline-block;
+    margin-top: -65px;
+    margin-left: 90px;
+}
+
+#spin_button{
+    position: absolute;
+    z-index: 2;
+    right: 70px;
+    top: 100px;
+}
+
+#name{
+    position: absolute;
+    z-index: 2;
+    width:600px;
+    font-size: 60px;
+    outline: none;
+    border: none;
+    background: transparent;
+    text-align: center;
+    left: 15px;
+    top: 105px;
+    font-family: SofiaProSoftBold;
+    font-weight: bold;
+}
+
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0.2s;
+}

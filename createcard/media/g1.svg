@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 379 154.7" style="enable-background:new 0 0 379 154.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#filter-2);}
+	.st1{fill:#FFFFFF;}
+	.st2{filter:url(#filter-4);}
+	.st3{fill:#FF905F;}
+	.st4{font-family:'Arial-BoldMT';}
+	.st5{font-size:50px;}
+	.st6{fill:#F8E71C;}
+</style>
+<filter  filterUnits="objectBoundingBox" height="107.5%" id="filter-4" width="111.0%" x="-4.9%" y="-2.2%">
+	<feOffset  dx="1" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+	<feGaussianBlur  in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"></feGaussianBlur>
+	<feColorMatrix  in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.117498868 0">
+		</feColorMatrix>
+</filter>
+<filter  filterUnits="objectBoundingBox" height="107.5%" id="filter-2" width="111.0%" x="-4.9%" y="-2.2%">
+	<feOffset  dx="1" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+	<feGaussianBlur  in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"></feGaussianBlur>
+	<feColorMatrix  in="shadowBlurOuter1" type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.117498868 0">
+		</feColorMatrix>
+</filter>
+<g id="Color-Copy">
+	<g class="st0">
+		<polygon id="path-1_2_" points="4,1.2 177,1.2 177,151.2 4,151.2 		"/>
+	</g>
+	<g>
+		<polygon id="path-1_1_" class="st1" points="4,1.2 177,1.2 177,151.2 4,151.2 		"/>
+	</g>
+</g>
+<g id="Color-Copy-2">
+	<g class="st2">
+		<polygon id="path-3_2_" points="200,1.2 373,1.2 373,151.2 200,151.2 		"/>
+	</g>
+	<g>
+		<polygon id="path-3_1_" class="st1" points="200,1.2 373,1.2 373,151.2 200,151.2 		"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 271.1872 102.0361)" class="st3 st4 st5">B</text>
+<text transform="matrix(1 0 0 1 72.6622 102.0361)" class="st6 st4 st5">A</text>
+<rect id="Rectangle" x="4" y="1" class="st6" width="173" height="11"/>
+<rect id="Rectangle-Copy" x="200" y="1" class="st3" width="173" height="11"/>
+</svg>
