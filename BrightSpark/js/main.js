@@ -1,17 +1,16 @@
 $(function() {
 	
 	var backgrounds = [
-						"Stander_page_Cover.png",
-						"Stander_page_Hello.png",
-						"Greenbg.png",
 						"GreyBackground.jpg",
-						"Stander_page_goodbye.png",
-						"Stander_page_Feebcack.png"
+						"color1.jpg",
+						"color2.jpg",
+						"color3.jpg",
+						"color4.jpg",
+						"color5.jpg"
 						];
-
 	// init of cover page
-	$('.roster, .previous, .topButton').css('visibility','hidden');
-	$('.Hbutton, Mbutton').hide();
+	$('.Hbutton, .Mbutton').hide();
+	$('.previous').css("visibility","hidden");
 
 	// TopButton
 	var preButton = "topButton1";
@@ -24,27 +23,48 @@ $(function() {
     	$(this).find('img').attr('src',buttonSrc);
 
     	preNumber = Number(preButton.match(/\d+/)[0]);
+
     	preButton = $(this).attr('id'); 
     	curNumber = Number(preButton.match(/\d+/)[0]);
-    	
+
     	buttonPath = buttonPath.replace(preNumber,curNumber);
 
     	// change background
-    	if(curNumber == 1)
+    	if(curNumber == 6)
     	{
     		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[1] +'")');
     	}
+    	else if(curNumber == 7)
+    	{
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[0] +'")');
+    	}
+    	else if(curNumber == 8)
+    	{
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
+    	}
+    	else if(curNumber == 9)
+    	{
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[4] +'")');
+    	}
+    	else if(curNumber == 10)
+    	{
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[5] +'")');
+    	}
     	else
     	{
-    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[2] +'")');
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[0] +'")');
     	}
 
-		if(curNumber>2)
+		if(curNumber == 1)
 		{
-			$('.next, .previous').hide();
+			$('.previous').css("visibility", "hidden");
+		}
+		else if(curNumber == 13)
+		{
+			$('.next').css("visibility", "hidden");
 		}
 		else{
-			$('.next, .previous').show();
+			$('.next, .previous').css("visibility", "visible");
 		}
 
     	// update HF button
@@ -55,7 +75,6 @@ $(function() {
     	$('#chapter'+curNumber).find("[data-value=page1]").addClass("active");
 
     	pauseVideo();
-    	$('.popup').show();
     })
 
 
@@ -322,9 +341,9 @@ $(function() {
         	$('.foodAnimate').removeClass('shakeit');
     })
 
-    var correctSound = new Audio("./media/sound/correct.mp3");
-    var incorrectSound = new Audio("./media/sound/incorrect.mp3");
-    var wheelSound = new Audio("./media/sound/wheel.mp3");
+    // var correctSound = new Audio("./media/sound/correct.mp3");
+    // var incorrectSound = new Audio("./media/sound/incorrect.mp3");
+    // var wheelSound = new Audio("./media/sound/wheel.mp3");
 	$('.alpha').click(function(){
 		src = $(this).attr('src');
 		ans = $(this).attr('data-answer');
@@ -511,10 +530,13 @@ $(function() {
 	}
 
 	function pauseVideo(){
-		var media = $("#hfVideo").get(0);
+		var media = $("#helloVideo").get(0);
 		media.pause();
 		media.currentTime = 0;
-		var media = $("#hfVideo2").get(0);
+		var media = $("#restaurantVideo").get(0);
+		media.pause();
+		media.currentTime = 0;
+		var media = $("#goodbyeVideo").get(0);
 		media.pause();
 		media.currentTime = 0;
 		// var media = $("#pizzaSong").get(0);
@@ -799,188 +821,6 @@ $(function() {
 			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0],
 			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(1)")[0]]);
 		return quiz;
-	}
-
-
-
-	// wheel
-	$('.wheel').click(function(){
-		image = $(this).find(".pin > img")[0];
-		canvas = $(this).find(".pinCanvas")[0];
-		spin(canvas,image);
-		pauseAudio();
-		wheelSound.play();
-	})
-
-	var startAngle = 0;
-	var spinPiece = 6;
-	var spinTimeout = null;
-	var spinTime = 0;
-	var spinTimeTotal = 0;
-	var spinAngleStart = 0;
-	var canvas, image;
-	var previousPiece = 1;
-	// var arc = Math.PI / (spinPiece / 2);
-
-	var lPiece = [1,2,3,4,5,6];
-	var mPiece = [1,2,3,4,5,6,7,8,9];
-	var hPiece = [1,2,3,4,5,6,7,8,9,10,11,12];
-	var nowPiece = lPiece;
-
-	var arc_last = 0;
-
-	for(i=0; i<$('.pinCanvas').length; i++)
-	{
-		image = $('.wheel').eq(i).find(".pin > img")[0];
-		canvas = $('.wheel').eq(i).find(".pinCanvas")[0];
-		var ctx = canvas.getContext("2d");
-		drawRouletteWheel(canvas, image);
-	}
-	
-	function drawRouletteWheel(canvas,image) {
-	    if (canvas.getContext) {
-	        var ctx = canvas.getContext("2d");
-	        image.onload=function(){
-	        	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	        	ctx.drawImage(image, 0, 0);
-	        	ctx.save();
-	        } 
-	    }
-	}
-
-	// function spin(canvas, image) {
-	//     do
-	//     {
-	//     	spinAngleStart = Math.random() * 10 + 10;
-	//     	spinTimeTotal = Math.random() * 3 + 5 * 1010; //5.05s duration
-
-	//     	for(spinTime=0;spinTime<spinTimeTotal;spinTime+=30)
-	//     	{
-	//     		spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
-	//     		startAngle += (spinAngle * Math.PI / 180);
-	//     		angle = startAngle + arc;
-	//     	}
-	//     	restPiece = (angle%(Math.PI * 2)) / (Math.PI * 2) * spinPiece;
-	//     	diff = Math.abs(previousPiece - restPiece - Math.PI/(spinPiece*2));
-
-	//     } while(diff <= 0.5);
-
-	//     spinTime = 0;
-	//     startAngle = 0;
-	//     previousPiece = Math.round(restPiece);
-
-	//     rotateWheel(canvas, image);
-	// }
-
-	// function rotateWheel(canvas, image) {
-	//     spinTime += 30;
-	//     if (spinTime >= spinTimeTotal) {
-	//         stopRotateWheel();
-	//         return;
-	//     }
-	//     var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
-	//     startAngle += (spinAngle * Math.PI / 180);
-
-	// 	var ctx = canvas.getContext("2d");
-	//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-	//     ctx.save();
-	//     ctx.translate(canvas.width / 2, canvas.height / 2);
-
-	//     var angle = startAngle + arc;
-	//     ctx.rotate(angle);
-	//     ctx.drawImage(image, -canvas.width / 2, -canvas.width / 2);
-	//     ctx.restore();
-
-	//     spinTimeout = setTimeout(function()
-	//     	{
-	//     		rotateWheel(canvas,image);
-	//     	}, 30);
-	// }
-
-	function spin(canvas, image) {
-		
-		$(".wheel").css("pointer-events", "none");
-
-		if(nowPiece.length <= 0)
-		{
-			if(spinPiece == 6)
-			{
-				nowPiece = lPiece.slice();
-			}
-			else if(spinPiece == 9)
-			{
-				nowPiece = mPiece.slice();
-			}
-			else if(spinPiece == 12)
-			{
-				nowPiece = hPiece.slice();
-			}
-		}
-
-		shuffleArray(nowPiece);
-		arc = 360 / spinPiece * 12;
-		arc_diff = nowPiece[0] * arc - arc_last;
-		if(arc_diff < 0)
-		{
-			arc_diff = arc_diff + 4320;
-		}
-
-		spinAngleStart = 10;
-    	// spinTimeTotal = 4380 + 240 * 12; //5.05s duration
-    	spinTimeTotal = 4380 + arc_diff;
-
-	    spinTime = 0;
-
-	    rotateWheel(canvas, image);
-
-	    arc_last = nowPiece[0] * arc;
-		nowPiece.splice(nowPiece.indexOf(nowPiece[0]), 1);
-	}
-
-	function rotateWheel(canvas, image) {
-	    spinTime += 30;
-	    if (spinTime >= spinTimeTotal) {
-	        stopRotateWheel();
-	        $(".wheel").css("pointer-events", "auto");
-	        return;
-	    }
-	    // console.log(spinTime)
-	    var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
-	    startAngle += (spinAngle * Math.PI / 180.0);
-
-		var ctx = canvas.getContext("2d");
-	    ctx.clearRect(0, 0, canvas.width, canvas.height);
-	    ctx.save();
-	    ctx.translate(canvas.width / 2, canvas.height / 2);
-
-	    var angle = startAngle;
-	    ctx.rotate(angle);
-	    ctx.drawImage(image, -canvas.width / 2, -canvas.height / 2);
-	    ctx.restore();
-
-	    spinTimeout = setTimeout(function()
-	    	{
-	    		rotateWheel(canvas,image);
-	    	}, 30);
-	}
-
-	function stopRotateWheel() {
-	    clearTimeout(spinTimeout);
-	}
-
-	function easeOut(t, b, c, d) {
-	    var ts = (t /= d) * t;
-	    var tc = ts * t;
-    return b + c * (tc + -3 * ts + 3 * t);
-	}
-
-	function shuffleArray(array) {
-	    for (var i = array.length - 1; i > 0; i--) {
-	        var j = Math.floor(Math.random() * (i + 1));
-	        var temp = array[i];
-	        array[i] = array[j];
-	        array[j] = temp;
-	    }
 	}
 
 })

@@ -1,0 +1,76 @@
+@font-face {
+  font-family: EFCircularWeb-Medium.woff;
+  src: url(EFCircularWeb-Medium.woff);
+}
+
+@font-face {
+  font-family: EFCircularWeb-Bold;
+  src: url(EFCircularWeb-Bold.woff);
+}
+
+@font-face {
+  font-family: EFCircularWeb-Light;
+  src: url(EFCircularWeb-Light.woff);
+}
+
+#chapter1 > [data-value="page1"] > .imageTitle:nth-child(2){
+	top:20%;
+	left: 0%;
+	width:100%;
+}
+
+#chapter1 > [data-value="page1"] > .pageTitle:nth-child(3){
+	top:31%;
+	left:0%;
+	right:0;
+	width:100%;
+	font-family: EFCircularWeb-Medium.woff;
+	color: #000000;
+	text-align: center;
+}
+
+#chapter9 > [data-value="page1"] > .pageTitle:nth-child(2){
+	top:18.5%;
+	left:10.4%;
+	right:0;
+	width:100%;
+	font-family: EFCircularWeb-Medium.woff;
+	color: #000000;
+}
+
+#chapter10 > [data-value="page1"] > .imageTitle:nth-child(1){
+	top: 19.4%;
+	left: 60%;
+	height: 100%;
+}
+#chapter10 > [data-value="page1"] > .pageTitle:nth-child(2){
+	top:38%;
+	left:20%;
+	right:0;
+	width:100%;
+	font-family: EFCircularWeb-Medium.woff;
+	color: #FFFFFF;
+}
+
+#chapter11 > [data-value="page1"] > .imageTitle:nth-child(1){
+	top: 26.9%;
+	left: -28%;
+	width: 100%;
+}
+#chapter11 > [data-value="page1"] > .pageTitle:nth-child(2){
+	top:18.8%;
+	left:43%;
+	right:0;
+	width:100%;
+	font-family: EFCircularWeb-Medium.woff;
+	color: #8d1275;
+}
+#chapter11 > [data-value="page1"] > .pageContent:nth-child(3){
+	top:33.8%;
+	left:43.2%;
+	right:0;
+	width:100%;
+	font-family: EFCircularWeb-Light.woff;
+	color: #000000;
+}
+
