@@ -10,13 +10,14 @@ $(function() {
 						];
 	// init of cover page
 	$('.Hbutton, .Mbutton').hide();
-	$('.previous').css("visibility","hidden");
+	$('.previous, .countNumber').css("visibility","hidden");
 
 	// TopButton
 	var preButton = "topButton1";
 	var buttonPath = "./media/buttons/Sections/1_gray.svg";
 	$('.topButton').click(function(e){
     	e.preventDefault();
+
     	// change button icon
     	$("#"+preButton).find('img').attr('src',buttonPath);
     	buttonSrc = $(this).find('img').attr('src').replace("gray","white");
@@ -55,6 +56,7 @@ $(function() {
     		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[0] +'")');
     	}
 
+    	//update previous & next
 		if(curNumber == 1)
 		{
 			$('.previous').css("visibility", "hidden");
@@ -67,8 +69,47 @@ $(function() {
 			$('.next, .previous').css("visibility", "visible");
 		}
 
-    	// update HF button
-		$('.Mbutton, .Hbutton').hide();
+		//update topButton
+		if(curNumber == 3 || curNumber == 5 || curNumber == 12)
+		{
+			$('.topButton').css("visibility", "hidden");
+		}
+		else
+		{
+			$('.topButton').css("visibility", "visible");
+		}
+
+    	// update HF button & Counting Number 
+		if(curNumber == 6 || curNumber == 7 || curNumber == 8)
+		{			
+			if(curNumber == 6)
+			{
+				$('.backNumber').text(aMnumber.length);
+				$('.frontNumber').text(1);
+				$('.countNumber').css("visibility","visible");
+
+				upadateMHbutton(pageNumber, index, audioFlag);
+			}
+			else if(curNumber == 8)
+			{
+				$('.backNumber').text(sMnumber.length);
+				$('.frontNumber').text(1);
+				$('.countNumber').css("visibility","visible");
+
+				upadateMHbutton(pageNumber, index, shapeFlag);
+			}
+			else
+			{
+				$('.countNumber').css("visibility","hidden");
+
+				upadateMHbutton(pageNumber, index, countFlag);
+			}
+		}
+		else
+		{
+			$('.Mbutton, .Hbutton').hide();
+			$('.countNumber').css("visibility","hidden");
+		}
 
     	// toggle content
     	$('.pages').removeClass("active");
@@ -80,36 +121,25 @@ $(function() {
 
 	// countPages
 	var pageNumber = [];
-	for (var i=0; i<8;i++)
+	var index;
+	for (var i=1; i<14;i++)
 	{
-		pages = $('#chapter' + i +' > .pages').not('.H, .M, .MH, .qM, .qH, .fM, .fH, .bwH, .bwM, .sM, .sH');
+		pages = $('#chapter' + i +' > .pages').not('.cH, .aH, .sH');
 		pageNumber = $.merge($.merge([],pageNumber),countPages(pages, pages.length, i));
 	}
-
-	var vocabularyChapter = 2;
-	var quizChapter = 5;
-	var finaleChapter = 6;
-	var buildwordsChapter = 4;
-	// var phonicsChapter = 4;
-	var structureChapter = 3;
-	var finalePage = 2;
-	var Mnumber = countPagesMH($('.M.pages').length, vocabularyChapter,'M');
-	var MHnumber = countPagesMH($('.MH.pages').length, vocabularyChapter,'MH');
-	var Hnumber = countPagesMH($('.H.pages').length, vocabularyChapter,'H');
-	var quizL = countPagesMH($('.qL.pages').length, quizChapter,'qL');
-	var quizM = countPagesMH($('.qM.pages').length, quizChapter,'qM');
-	var quizH = countPagesMH($('.qH.pages').length, quizChapter,'qH');
-	var bwL = countPagesMH($('.bwL.pages').length, buildwordsChapter,'bwL');
-	var bwM = countPagesMH($('.bwM.pages').length, buildwordsChapter,'bwM');
-	var bwH = countPagesMH($('.bwH.pages').length, buildwordsChapter,'bwH');
-	var finaleL = countPagesMH($('.fL.pages').length, finaleChapter,'fL');
-	var finaleM = countPagesMH($('.fM.pages').length, finaleChapter,'fM');
-	var finaleH = countPagesMH($('.fH.pages').length, finaleChapter,'fH');
-	var sL = countPagesMH($('.sL.pages').length, structureChapter,'sL');
-	var sM = countPagesMH($('.sM.pages').length, structureChapter,'sM');
-	var sH = countPagesMH($('.sH.pages').length, structureChapter,'sH');
-	var phonics = countPagesMH($('.phonics.pages').length, buildwordsChapter,'phonics');
+	var audioChapter = 6;
+	var countChapter = 7;
+	var shapeChapter = 8;
+	var cMnumber = countPagesMH($('.cM.pages').length, countChapter,'cM');
+	var cHnumber = countPagesMH($('.cH.pages').length, countChapter,'cH');
+	var sMnumber = countPagesMH($('.sM.pages').length, shapeChapter,'sM');
+	var sHnumber = countPagesMH($('.sH.pages').length, shapeChapter,'sH');
+	var aMnumber = countPagesMH($('.aM.pages').length, audioChapter,'aM');
+	var aHnumber = countPagesMH($('.aH.pages').length, audioChapter,'aH');
 	
+	var audioFlag = "aM";
+	var countFlag = "coM";
+	var shapeFlag = "sM";
 	// SideButton
 	var number = pageNumber.length;
 	$('.next, .previous').click(function(e){
@@ -122,55 +152,96 @@ $(function() {
 		// update index
 		index = updateIndex(type,pageNumber,index);
 
-		// change background
-		$('.next, .topButton, .roster, .previous').css("visibility", "visible");
-		$('.Hbutton, .Mbutton').hide();
-		if(pageNumber[index][1]>1)
+    	// change background
+    	if(pageNumber[index][0] == 6)
+    	{
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[1] +'")');
+    	}
+    	else if(pageNumber[index][0] == 7)
+    	{
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[0] +'")');
+    	}
+    	else if(pageNumber[index][0] == 8)
+    	{
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
+    	}
+    	else if(pageNumber[index][0] == 9)
+    	{
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[4] +'")');
+    	}
+    	else if(pageNumber[index][0] == 10)
+    	{
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[5] +'")');
+    	}
+    	else
+    	{
+    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[0] +'")');
+    	}
+
+    	//update previous & next
+		if(pageNumber[index][0] == 1)
 		{
-			if(pageNumber[index] == pageNumber[pageNumber.length-1])
-			{
-				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[4] +'")');
-				$('.next, .topButton, .roster').css("visibility", "hidden");
-			}
-			else
-			{
-				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
-				upadateMHbutton(pageNumber,index, Hflag);
-			}
+			$('.previous').css("visibility", "hidden");
 		}
-		else if(index == 1)
+		else if(pageNumber[index][0] == 13)
 		{
-			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[1] +'")');
+			$('.next').css("visibility", "hidden");
 		}
-		else if(index == 0)
+		else{
+			$('.next, .previous').css("visibility", "visible");
+		}
+
+		//update topButton
+		if(pageNumber[index][0] == 3 || pageNumber[index][0] == 5 || pageNumber[index][0] == 12)
 		{
-			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[0] +'")');
-			$('.previous, .topButton, .roster').css("visibility", "hidden");
+			$('.topButton').css("visibility", "hidden");
 		}
 		else
 		{
-			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[2] +'")');
-			if(pageNumber[index] == pageNumber[pageNumber.length-2])
-			{
-				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[5] +'")');
-			}
+			$('.topButton').css("visibility", "visible");
+		}
 
-			if(pageNumber[index][0]>2 && pageNumber[index][1] == 1)
+    	// update HF button & Counting Number 
+		if(pageNumber[index][0] == 6 || pageNumber[index][0] == 7 || pageNumber[index][0] == 8)
+		{
+			if(pageNumber[index][0] == 6)
 			{
-				$('.next, .previous').hide();
+				$('.backNumber').text(aMnumber.length);
+				countNumber(audioFlag,index,pageNumber);
+				$('.countNumber').css("visibility","visible");
+
+				upadateMHbutton(pageNumber, index, audioFlag);
 			}
-			else{
-				$('.next, .previous').show();
+			else if(pageNumber[index][0] == 8)
+			{
+				$('.backNumber').text(sMnumber.length);
+				countNumber(shapeFlag,index,pageNumber);
+				$('.countNumber').css("visibility","visible");
+
+				upadateMHbutton(pageNumber, index, shapeFlag);
+			}
+			else
+			{
+				$('.countNumber').css("visibility","hidden");
+
+				upadateMHbutton(pageNumber, index, countFlag);
 			}
 		}
+		else
+		{
+			$('.Mbutton, .Hbutton').hide();
+			$('.countNumber').css("visibility","hidden");
+		}
+
 
 		// toggle content
 		$('.pages').removeClass("active");
 		$('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").addClass("active");
 
 		// change button icon
-		curButton = "topButton"+pageNumber[index][0];		
-    	if(!curButton.includes(0) && !curButton.includes(8))
+		curButton = "topButton"+pageNumber[index][0];
+		ButtonNumber = Number(curButton.match(/\d+/)[0]);
+    	if(ButtonNumber>0 && ButtonNumber<14)
     	{
     		$("#"+preButton).find('img').attr('src',buttonPath);
     		buttonSrc = $("#"+curButton).find('img').attr('src').replace("gray","white");
@@ -184,298 +255,82 @@ $(function() {
     	}
 
     	pauseVideo();
-    	$('.popup').show();
 
 	})
 
-	var Hflag = false;
-	var foodFlag = "M";
+	// HMbutton
 	var curChapter;
-	$('.Hbutton, .Mbutton, .wheelButton').click(function(e){
-		curPage = $('.active.pages').attr('id');
-		curChapter = vocabularyChapter;
+	$('.Hbutton, .Mbutton').click(function(e){
+		curPage = $('.active.pages').attr('data-value');
+		curChapter = Number($('.active.pages').parent().attr('id').match(/\d+/)[0]);
+
 		if($(this).attr('class').includes('Hbutton'))
 		{
-			if (curPage == "Hselection")
+			if(curChapter==6)
 			{
-				newNumber = MHnumber;
-				foodFlag = "MH";
-				Hflag = true;
+				audioFlag = "aH";
+				curFlag = audioFlag;
+				newNumber = aHnumber;
 			}
-			else if(curPage == "MHselection")
+			else if(curChapter==7)
 			{
-				newNumber = Hnumber;
-				foodFlag = "H";
-				Hflag = true;
+				countFlag = "cH";
+				curFlag = countFlag;
+				newNumber = cHnumber;
+			}
+			else if(curChapter==8)
+			{
+				shapeFlag = "sH";
+				curFlag = shapeFlag;
+				newNumber = sHnumber;
 			}
 		}
 		else if($(this).attr('class').includes('Mbutton'))
 		{
-			if (curPage == "MHselection")
+			if(curChapter==6)
 			{
-				newNumber = Mnumber;
-				foodFlag = "M";
-				Hflag = false;
+				audioFlag = "aM";
+				curFlag = audioFlag;
+				newNumber = aMnumber;
+			}
+			else if(curChapter==7)
+			{
+				countFlag = "cM";
+				curFlag = countFlag;
+				newNumber = cMnumber;
+			}
+			else if(curChapter==8)
+			{
+				shapeFlag = "sM";
+				curFlag = shapeFlag;
+				newNumber = sMnumber;
 			}
 		}
-		else if($(this).attr('class').includes('wheelButton'))
-		{
-			curButton = $(this).attr('class');
-			if(curPage == "structureSelection")
-			{
-				if(curButton.includes("wheelButtonLow"))
-				{
-					newNumber = sL;
-					spinPiece = 6;
-					nowPiece = lPiece.slice();
-				}
-				else if(curButton.includes("wheelButtonMid"))
-				{
-					newNumber = sM;
-					spinPiece = 9;
-					nowPiece = mPiece.slice();
-				}
-				else if(curButton.includes("wheelButtonHigh"))
-				{
-					newNumber = sH;
-					spinPiece = 12;
-					nowPiece = hPiece.slice();
-				}
-				curChapter = structureChapter;
-			}
-			else if(curPage == "bwSelection")
-			{
-				if(curButton.includes("wheelButtonLow"))
-				{
-					newNumber = $.merge($.merge([],phonics),bwL);
-				}
-				else if(curButton.includes("wheelButtonMid"))
-				{
-					newNumber = $.merge($.merge([],phonics),bwM);
-				}
-				else if(curButton.includes("wheelButtonHigh"))
-				{
-					newNumber = bwH;
-				}
-				curChapter = buildwordsChapter;
-				// console.log(phonics,bwL);
-			}
-			else if(curPage == "quizSelection")
-			{
-				if(curButton.includes("wheelButtonLow"))
-				{
-					newNumber = quizL;
-				}
-				else if(curButton.includes("wheelButtonMid"))
-				{
-					newNumber = quizM;
-				}
-				else if(curButton.includes("wheelButtonHigh"))
-				{
-					newNumber = quizH;
-				}
-				curChapter = quizChapter;
-			}
-			else if(curPage == "finaleSelection")
-			{
-				if(curButton.includes("wheelButtonLow"))
-				{
-					newNumber = finaleL;
-				}
-				else if(curButton.includes("wheelButtonMid"))
-				{
-					newNumber = finaleM;
-				}
-				else if(curButton.includes("wheelButtonHigh"))
-				{
-					newNumber = finaleH;
-				}
-				curChapter = finaleChapter;
-			}
-
-			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
-			$('.popup').show();
-			
-		}
+		
 
 		// update page index
-		indexStart = getIndexOf(pageNumber,[curChapter,Number($('#'+curPage).attr('data-value').match(/\d+/)[0])]);
-		indexEnd = getIndexOf(pageNumber,[curChapter+1,1]);
-		[pageNumber,indexStart] = updatePageIndex(pageNumber,indexStart,indexEnd,newNumber);
-
-
+		if(curFlag.includes("M"))
+		{
+			preFlag = curFlag.replace("M","H");
+		}
+		else
+		{
+			preFlag = curFlag.replace("H","M");
+		}
+		//previous page
+		indexStart = getIndexOf(pageNumber,[curChapter,Number($('#chapter'+curChapter).find("[data-"+preFlag+"=page1]").attr('data-value').match(/\d+/)[0])]);
+		indexEnd = getIndexOf(pageNumber,[curChapter,Number($('#chapter'+curChapter).find("[data-"+preFlag+"=page"+newNumber.length+"]").attr('data-value').match(/\d+/)[0])]);
+		//current page
+		pageNumber = updatePageIndex(pageNumber,indexStart,indexEnd,newNumber);
+		index = getIndexOf(pageNumber,[curChapter,Number($('#chapter'+curChapter).find("[data-"+curFlag+"=page"+1+"]").attr('data-value').match(/\d+/)[0])]);
+		// upadate active page
 		$('.pages').removeClass("active");
-		$('#chapter'+pageNumber[indexStart][0]).find("[data-value=page"+pageNumber[indexStart][1]+"]").addClass("active");
+		$('#chapter'+pageNumber[indexStart][0]).find("[data-value=page"+pageNumber[index][1]+"]").addClass("active");
 		
-		if(curPage.includes("MHselection") || curPage.includes("Hselection"))
-		{
-			updateFoodNumber(newNumber,foodFlag,pageNumber);
-			upadateMHbutton(pageNumber,indexStart,Hflag);
-		}
-
-		$('.next, .previous').show();
+		// update button & number
+		countNumber(curFlag,index,pageNumber);
+		upadateMHbutton(pageNumber,index,curFlag);
 	})
-
-	//roster 
-	$(".roster").click(function() {
-		$('#rosterPopup').modal('show');
-	})
-
-	$('.imageTitle').click(function(e){
-		$(this).siblings('.foodText').show();
-	})
-
-
-	$('.foodAnimate').click(function(){
-		$('.foodAnimate').removeClass('shakeit');
-		$(this).addClass('shakeit');
-	})
-
-	$('.popup').click(function(){
-		$(this).hide();
-	})
-
-	// action when click outside target
-	$(document).on('click', function(e){
-		if(!$(e.target).closest(".shakeit").length)
-        	$('.foodAnimate').removeClass('shakeit');
-    })
-
-    // var correctSound = new Audio("./media/sound/correct.mp3");
-    // var incorrectSound = new Audio("./media/sound/incorrect.mp3");
-    // var wheelSound = new Audio("./media/sound/wheel.mp3");
-	$('.alpha').click(function(){
-		src = $(this).attr('src');
-		ans = $(this).attr('data-answer');
-		pauseAudio();
-		if(ans == "true" && src.includes('normal'))
-		{
-			src=src.replace('normal','correct');
-			correctSound.play();
-		}
-		else if(ans == "false" && src.includes('normal'))
-		{
-			src=src.replace('normal','incorrect');
-			incorrectSound.play();
-		}
-		$(this).attr('src',src);
-	})
-
-	function pauseAudio(){
-		correctSound.pause();
-		correctSound.currentTime = 0;
-		incorrectSound.pause();
-		incorrectSound.currentTime = 0;
-		wheelSound.pause();
-		wheelSound.currentTime = 0;
-	}
-
-	var resetFood = "slot/graybox.png";
-	var resetCard = "slot/transbox.png";
-	var resetBW = ["slot/bluebox.png","slot/orangebox.png"];
-	$('.resetButton').click(function(){
-		curClass = $(this).attr("class");
-		if(curClass.includes("Bfood"))
-		{
-			$(this).siblings(".imageTitle, .structureDown").find(".dropBox").attr("alpha-value","empty");
-			$(this).siblings(".imageTitle").find(".dragBox").find("img").css("visibility","visible");
-			path = $(this).siblings(".imageTitle, .structureDown").find(".dropBox img").attr("src").replace(/answer.*/, resetFood);
-			$(this).siblings(".imageTitle, .structureDown").find(".dropBox img").attr("src", path);
-		}
-		else if(curClass.includes("Bbw"))
-		{
-			path = $(this).siblings(".buildWordsTitle").find(".dropBox").eq(0).find("img").attr("src").replace(/answer.*/,resetBW[0]);
-			$(this).siblings(".buildWordsTitle").find(".dropBox").eq(0).find("img").attr("src",path);
-			path = $(this).siblings(".buildWordsTitle").find(".dropBox").eq(2).find("img").attr("src").replace(/answer.*/,resetBW[0]);
-			$(this).siblings(".buildWordsTitle").find(".dropBox").eq(2).find("img").attr("src",path);
-			path = $(this).siblings(".buildWordsTitle").find(".dropBox").eq(1).find("img").attr("src").replace(/answer.*/,resetBW[1]);
-			$(this).siblings(".buildWordsTitle").find(".dropBox").eq(1).find("img").attr("src",path);
-			path = $(this).siblings(".buildWordsTitle").find(".dropBox").eq(3).find("img").attr("src").replace(/answer.*/,resetBW[1]);
-			$(this).siblings(".buildWordsTitle").find(".dropBox").eq(3).find("img").attr("src",path);
-
-			$(this).siblings(".buildWordsTitle").find(".dragBox img").css("visibility","visible");
-
-			$(this).siblings(".buildWordsTitle").find(".bwCorrect").hide();
-			$(this).siblings(".buildWordsTitle").find(".bwCorrect").removeClass("animated bounceInDown fast");
-		}
-		else if(curClass.includes("Bquiz"))
-		{
-			for(i=0;i<$(this).siblings(".quizImage, .alphaBox").find("[data-answer='false']").length;i++)
-			{
-				path = $(this).siblings(".quizImage, .alphaBox").find("[data-answer='false']").eq(i).attr("src").replace("incorrect","normal");
-				$(this).siblings(".quizImage, .alphaBox").find("[data-answer='false']").eq(i).attr("src",path);
-			}
-			path = $(this).siblings(".quizImage, .alphaBox").find("[data-answer='true']").attr("src").replace("correct","normal");
-			$(this).siblings(".quizImage, .alphaBox").find("[data-answer='true']").attr("src",path);
-		}
-		else if(curClass.includes("Bvoc"))
-		{
-			$(this).siblings(".foodText").hide();
-		}
-		else if(curClass.includes("Bcard"))
-		{
-			path = $(this).siblings(".imageTitle").find(".dropBox img").attr("src").replace(/answer.*/,resetCard);
-			$(this).siblings(".imageTitle").find(".dropBox img").attr("src",path);
-			for(i=0;i<$(this).siblings(".cardDrop").find("img").length;i++)
-			{
-				path = $(this).siblings(".cardDrop").find("img").eq(i).attr("src").replace("answer","normal");
-				$(this).siblings(".cardDrop").find("img").eq(i).attr("src",path);
-			}			
-			$(this).siblings(".dragBox").find("img").css("visibility","visible");
-		}
-		else if(curClass.includes("Bqc"))
-		{
-			path = $(this).siblings(".quizImage").find(".dropBox img").attr("src").replace(/answer.*/, resetFood);
-			$(this).siblings(".quizImage").find(".dropBox img").attr("src", path);
-			$(this).siblings(".dragBox").find("img").css("visibility","visible");
-
-			$(this).siblings(".quizCorrect").hide();
-			$(this).siblings(".quizCorrect").removeClass("animated bounceInDown fast");
-		}
-	})
-
-
-	// drag function
-	var dragulaBWleft = [],
-	dragulaBWright =[],
-	dragulaQuiz=[],
-	dragulaPhonics=[],
-	dragulaStructure=[];
-
-	for(i=0;i<$(".buildWordsTitle").length;i++)
-	{
-		BWpageNumber = Number($(".buildWordsTitle").eq(i).parent().attr("data-value").match(/\d+/)[0]);
-		[dragulaBWleft[i],dragulaBWright[i]] = updateDragulaBW(buildwordsChapter,BWpageNumber);
-	}
-
-	for(i=0;i<$(".quizImage.dragBox").length;i++)
-	{
-		QuizpageNumber = Number($(".quizImage.dragBox").eq(i).parent().attr("data-value").match(/\d+/)[0]);
-		dragulaQuiz[i] = updateDragulaQuiz(quizChapter,QuizpageNumber);	
-	}
-
-	for(i=0;i<$("#chapter"+ buildwordsChapter +" .phonics .dragBox").length;i++)
-	{
-		PhonicspageNumber = Number($("#chapter"+ buildwordsChapter +" .phonics .dragBox").eq(i).parent().attr("data-value").match(/\d+/)[0]);
-		dragulaPhonics[i] = updateDragulaPhonics(buildwordsChapter,PhonicspageNumber);
-	}
-	// strcuture
-	for(i=0;i<$("#chapter"+ structureChapter +" .imageTitle.dragBox").length;i++)
-	{
-		StructurepageNumber = Number($("#chapter"+ structureChapter +" .imageTitle.dragBox").eq(i).parent().attr("data-value").match(/\d+/)[0]);
-		dragulaStructure[i] = updateDragulaStructure(structureChapter,StructurepageNumber);
-	}
-	for(i=0;i<$("#chapter"+ structureChapter +" .sFood").length;i++)
-	{
-		StructurepageNumber = Number($("#chapter"+ structureChapter +" .sFood").eq(i).parent().attr("data-value").match(/\d+/)[0]);
-		dragulaStructure[i] = updateDragulaFood(structureChapter,StructurepageNumber);
-	}
-	for(i=0;i<$("#chapter"+ structureChapter +" .sFoodPrice").length;i++)
-	{
-		StructurepageNumber = Number($("#chapter"+ structureChapter +" .sFoodPrice").eq(i).parent().attr("data-value").match(/\d+/)[0]);
-		dragulaStructure = updateDragulaFoodPrice(structureChapter,StructurepageNumber);
-	}
-
 
 	function countPages (pages,length,n){
 		var number = [];
@@ -529,6 +384,36 @@ $(function() {
 		return index;
 	}
 
+	function countNumber(flag,index,pageNumber){
+		number = $('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr("data-"+flag);
+		number = Number(number.match(/\d+/)[0]);
+		$('.frontNumber').text(number);
+	}
+
+	function upadateMHbutton(pageNumber, index, flag){
+		// Hbutton and Mbutton
+		$('.Mbutton, .Hbutton').hide();
+		if(flag.includes("M"))
+		{
+			$('.Hbutton').css("display","block");
+		}
+		else if(flag.includes("H"))
+		{
+			$('.Mbutton').css("display","block");
+		}
+	}
+
+	function updatePageIndex(pageNumber, indexStart, indexEnd, newNumber) {
+		// update page index
+		start = pageNumber.slice(0,indexStart);
+		end = pageNumber.slice(indexEnd+1,pageNumber.length);
+
+		pageNumber=$.merge($.merge(start,newNumber),end);
+
+		return pageNumber;
+	}
+
+
 	function pauseVideo(){
 		var media = $("#helloVideo").get(0);
 		media.pause();
@@ -539,55 +424,93 @@ $(function() {
 		var media = $("#goodbyeVideo").get(0);
 		media.pause();
 		media.currentTime = 0;
-		// var media = $("#pizzaSong").get(0);
-		// media.pause();
-		// media.currentTime = 0;
 	}
 
-	function upadateMHbutton(pageNumber, index, Hflag=false){
-		// Hbutton and Mbutton
-		$('.Mbutton, .Hbutton').hide();
-		// if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "MHselection"
-		// 	|| $('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "quizSelection"
-		// 	|| $('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "bwSelection")
-		if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "MHselection")
+	function pauseAudio(){
+		for(i=0;i<$('.audio').length;i++)
 		{
-			$('.Mbutton, .Hbutton').css("display","block");
-		}
-		else if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "Hselection" && !Hflag)
-		{
-
-			$('.Hbutton').css("display","block");
+			var media = $(".audio").eq(i);
+			media.pause();
+			media.currentTime = 0;
 		}
 	}
 
-	function updateFoodNumber(newNumber,flag,pageNumber){
-		//update food number
-		sumNumber = $(".pages."+flag).find(".foodNumber").length / 2;
-		$(".pages."+flag).find(".backNumber").text(sumNumber);
-		for(var i=0; i<newNumber.length; i++)
+
+	$('.foodTable > img').click(function(){
+		number=$(this).attr('data-number');
+		$(this).parent().siblings('.checkTable').find("[data-number="+number+"]").css("visibility","visible");
+	})
+
+	$('.audio').click(function(){
+		audio = $(this).siblings("audio").get(0);
+		audio.play();
+	})
+
+	$('.clickTable > img').click(function(){
+		number=$(this).attr('data-number');
+		$(this).parent().siblings('.foodshapeTable').find("[data-number="+number+"]").css("visibility","visible");
+	})
+
+	// animation
+	$('.foodAnimate').click(function(){
+		$('.foodAnimate').removeClass('shakeit');
+		$(this).addClass('shakeit');
+	})
+
+	// action when click outside target
+	$(document).on('click', function(e){
+		if(!$(e.target).closest(".shakeit").length)
+        	$('.foodAnimate').removeClass('shakeit');
+    })
+
+
+	$('.alpha').click(function(){
+		src = $(this).attr('src');
+		ans = $(this).attr('data-answer');
+		pauseAudio();
+		if(ans == "true" && src.includes('normal'))
 		{
-			foodIndex = getIndexOf(pageNumber,newNumber[i]);
-			foodNumber = $('#chapter'+pageNumber[foodIndex][0]).find("[data-value=page"+pageNumber[foodIndex][1]+"]").attr("data-"+flag);
-			foodNumber = Number(foodNumber.match(/\d+/)[0]);
-			$('#chapter'+pageNumber[foodIndex][0]).find("[data-value=page"+pageNumber[foodIndex][1]+"]").find(".frontNumber").text(foodNumber);
+			src=src.replace('normal','correct');
+			correctSound.play();
 		}
+		else if(ans == "false" && src.includes('normal'))
+		{
+			src=src.replace('normal','incorrect');
+			incorrectSound.play();
+		}
+		$(this).attr('src',src);
+	})
 
+
+	// drag function
+	var SortDrag = [];
+	var SortDrag2 = [];
+	var sortChapter = 8;
+
+	SortPageNumber = Number($("#chapter"+ sortChapter +" .sortTable").eq(0).parent().attr("data-value").match(/\d+/)[0]);
+	SortDrag = constructDragulaSort(sortChapter,SortPageNumber);
+	SortPageNumber = Number($("#chapter"+ sortChapter +" .sortTable").eq(1).parent().attr("data-value").match(/\d+/)[0]);
+	SortDrag2 = constructDragulaSort2(sortChapter,SortPageNumber);
+
+	function constructDragulaSort(chapter,page){
+		cardFlag = 1;
+		quiz = dragulaSort(
+			[$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
+			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(1)")[0],
+			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]],cardFlag);
+		return quiz;
+	}
+	function constructDragulaSort2(chapter,page){
+		cardFlag = 1;
+		quiz = dragulaSort(
+			[$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
+			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(1)")[0],
+			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0],
+			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(1)")[0]],cardFlag);
+		return quiz;
 	}
 
-	function updatePageIndex(pageNumber, indexStart, indexEnd, newNumber) {
-		// update page index
-		start = pageNumber.slice(0,indexStart+1);
-		end = pageNumber.slice(indexEnd,pageNumber.length);
-
-		pageNumber=$.merge($.merge(start,newNumber),end);
-
-		indexStart ++;
-
-		return [pageNumber,indexStart];
-	}
-
-	function dragulaBW(dragBoxes, cardFlag=false, bwFlag=false, quizFlag=false){
+	function dragulaSort(dragBoxes, cardFlag=false, bwFlag=false, quizFlag=false){
 		drake = dragula(
 			dragBoxes,
 	    {
@@ -610,21 +533,19 @@ $(function() {
 	    }).on('drop',function(el,target,source,sibling){
 	        if(target.classList.contains('dropBox'))
 	        {
-	            var rightAnswer=target.getAttribute("alpha-value"), 
-	                currentAnswer=el.getAttribute("alpha-value");
-
-	            pauseAudio();
+	            var rightAnswer=target.getAttribute("data-number"), 
+	                currentAnswer=el.getAttribute("data-number");
 
 	            if(rightAnswer == currentAnswer)
 	            {
-	                src = source.querySelector('[alpha-value="'+currentAnswer+'"]').src.replace("normal","answer");
+	                src = source.querySelector('[data-number="'+currentAnswer+'"]').src.replace("normal","answer");
 	            	target.querySelector(".dropBackground").src = src;
 	            	correctSound.play();
 
 	                if(cardFlag)
 	                {
-	                	src = source.parentNode.querySelector('.cardDrop > [alpha-value="'+currentAnswer+'"').src.replace("normal","answer");
-	                	source.parentNode.querySelector('.cardDrop > [alpha-value="'+currentAnswer+'"').src = src;
+	                	src = source.parentNode.querySelector('.cardDrop > [data-number="'+currentAnswer+'"').src.replace("normal","answer");
+	                	source.parentNode.querySelector('.cardDrop > [data-number="'+currentAnswer+'"').src = src;
 	                }
 
 	                if(bwFlag)
@@ -647,7 +568,7 @@ $(function() {
 	            }
 	            else
 	            {
-	                source.querySelector('[alpha-value="'+currentAnswer+'"]').style.visibility="visible";
+	                source.querySelector('[data-number="'+currentAnswer+'"]').style.visibility="visible";
 	                incorrectSound.play();
 	            }       
 	        }
@@ -656,171 +577,35 @@ $(function() {
 
 	    }).on('cancel',function(el, container, source) {
 	    	// show the source imagex
-	    	var currentAnswer=el.getAttribute("alpha-value");
-	    	source.querySelector('[alpha-value="'+currentAnswer+'"]').style.visibility="visible";
+	    	var currentAnswer=el.getAttribute("data-number");
+	    	source.querySelector('[data-number="'+currentAnswer+'"]').style.visibility="visible";
 	    }).on('over',function(el, container, source) {
-	    	// hover change dropBox outlook
-	        updateDropBoxOutlook();
+	    	// // hover change dropBox outlook
+	     //    updateDropBoxOutlook();
 
-	        if(container.classList.contains("dropBox"))
-	        {
-	            src = container.querySelector(".dropBackground").src.replace("box","");
-	            container.querySelector(".dropBackground").src = src;
-	            container.classList.add('hover');
-	        }
+	     //    if(container.classList.contains("dropBox"))
+	     //    {
+	     //        src = container.querySelector(".dropBackground").src.replace("box","");
+	     //        container.querySelector(".dropBackground").src = src;
+	     //        container.classList.add('hover');
+	     //    }
 
-	        // hover change dragging item outlook
-	        // $(".gu-mirror").css({"box-shadow": "0px 10px 22px -4px rgba(0,0,0,0.64)"});
-	        src = $(".gu-mirror").attr("src").replace("normal","active");
-	        $(".gu-mirror").attr("src",src);
+	     //    // hover change dragging item outlook
+	     //    // $(".gu-mirror").css({"box-shadow": "0px 10px 22px -4px rgba(0,0,0,0.64)"});
+	     //    src = $(".gu-mirror").attr("src").replace("normal","active");
+	     //    $(".gu-mirror").attr("src",src);
 
-	        // hide the source image
-	    	var currentAnswer=el.getAttribute("alpha-value");
-	    	source.querySelector('[alpha-value="'+currentAnswer+'"]').style.visibility="hidden";
-	    	// hide target gray image
-	    	el.style.display="none";
+	     //    // hide the source image
+	    	// var currentAnswer=el.getAttribute("data-number");
+	    	// source.querySelector('[data-number="'+currentAnswer+'"]').style.visibility="hidden";
+	    	// // hide target gray image
+	    	// el.style.display="none";
 	    }).on('out',function(el, container, source){
-	        // after drop, change dropBox outlook
-	        updateDropBoxOutlook();
+	        // // after drop, change dropBox outlook
+	        // updateDropBoxOutlook();
 	    })
 	    return drake;
 	}
 
-
-	function dragulaFood(dragBoxes){
-		drake = dragula(
-			dragBoxes,
-	    {
-			copy: function (el, source) {
-			return source.classList.contains('dragBox');
-			},
-			isContainer: function (el) {
-			return false;
-			},
-			direction: 'horizontal',
-			removeOnSpill: true,
-			accepts: function (el, target) {
-			return true;
-			},
-			moves: function (el, source, handle) {
-			return source.classList.contains('dragBox'); 
-			}
-	    }).on('drag',function(el, source) {
-	    	// drag function is stupid
-	    }).on('drop',function(el,target,source,sibling){
-	        if(target.classList.contains('dropBox'))
-	        {
-	            var emptyStatus=target.getAttribute("alpha-value");
-	            var currentAnswer=el.getAttribute("alpha-value");
-
-	            if(emptyStatus == "empty")
-	            {
-	                src = source.querySelector('[alpha-value="'+currentAnswer+'"]').src.replace("normal","answer");
-	            	target.querySelector(".dropBackground").src = src;
-	            	target.setAttribute('alpha-value','occupied');
-	                // drake.containers = [];
-	            }
-	            else
-	            {
-	                source.querySelector('[alpha-value="'+currentAnswer+'"]').style.visibility="visible";
-	            }       
-	        }
-
-	        el.remove();
-
-	    }).on('cancel',function(el, container, source) {
-	    	// show the source image
-	    	var currentAnswer=el.getAttribute("alpha-value");
-	    	source.querySelector('[alpha-value="'+currentAnswer+'"]').style.visibility="visible";
-	    }).on('over',function(el, container, source) {
-	    	// hover change dropBox outlook
-	        updateDropBoxOutlook();
-
-	        if(container.classList.contains("dropBox"))
-	        {
-	            src = container.querySelector(".dropBackground").src.replace("box","");
-	            container.querySelector(".dropBackground").src = src;
-	            container.classList.add('hover');
-	        }
-
-	        // hover change dragging item outlook
-	        // $(".gu-mirror").css({"box-shadow": "0px 10px 22px -4px rgba(0,0,0,0.64)"});
-	        src = $(".gu-mirror").attr("src").replace("normal","active");
-	        $(".gu-mirror").attr("src",src);
-
-	        // hide the source image
-	    	var currentAnswer=el.getAttribute("alpha-value");
-	    	source.querySelector('[alpha-value="'+currentAnswer+'"]').style.visibility="hidden";
-	    	// hide target gray image
-	    	el.style.display="none";
-	    }).on('out',function(el, container, source){
-	        // after drop, change dropBox outlook
-	        updateDropBoxOutlook();
-	    })
-	    return drake;
-	}
-
-	function updateDropBoxOutlook(){
-		if($(".dropBox.hover")[0])
-        {
-        	src = $(".dropBox.hover").find('.dropBackground').attr("src");
-        	if(!src.includes("box") && src.includes("slot"))
-        	{
-	        	src = src.replace(".png","box.png");
-	            $(".dropBox.hover").find('.dropBackground').attr('src',src);  
-        	}
-        }
-        $(".dropBox.hover").removeClass('hover');
-	}
-
-	function updateDragulaBW(chapter,page){
-		left = dragulaBW([$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(1)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]],undefined,1);
-		right = dragulaBW([$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(2)")[0],
-									$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(3)")[0],
-									$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(1)")[0]],undefined,1);
-		return [left,right];
-	}
-
-	function updateDragulaQuiz(chapter,page){
-		quiz = dragulaBW([$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]],undefined,undefined,1);
-		return quiz;
-	}
-
-	function updateDragulaPhonics(chapter,page){
-		cardFlag = 1;
-		quiz = dragulaBW([$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(1)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(2)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(3)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(4)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(5)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]],cardFlag);
-		return quiz;
-	}
-
-	function updateDragulaStructure(chapter,page){
-		cardFlag = 1;
-		quiz = dragulaBW([$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(1)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(2)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(3)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]],cardFlag);
-		return quiz;
-	}
-	function updateDragulaFood(chapter,page){
-		quiz = dragulaFood([$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(1)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]]);
-		return quiz;
-	}
-	function updateDragulaFoodPrice(chapter,page){
-		quiz = dragulaFood([$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(1)")[0]]);
-		return quiz;
-	}
 
 })
