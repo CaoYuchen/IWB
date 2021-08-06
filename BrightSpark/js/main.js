@@ -316,7 +316,7 @@ $(function() {
 				countFlag = "cH";
 				curFlag = countFlag;
 				newNumber = cHnumber;
-				resetCounting();
+				resetCount();
 			}
 			else if(curChapter==8)
 			{
@@ -339,7 +339,7 @@ $(function() {
 				countFlag = "cM";
 				curFlag = countFlag;
 				newNumber = cMnumber;
-				resetCounting();
+				resetCount();
 			}
 			else if(curChapter==8)
 			{
@@ -507,17 +507,9 @@ $(function() {
 	})
 
 	// counting
-	resetCounting();
-
+	resetCount();
 	var counting1 = 1;
 	var counting2 = 1;
-	function resetCounting(){
-		counting1=1;
-		counting2=1;
-		$(".countObject").css("visibility","hidden");
-		$('.pages.cM').find("[data-count=0]").css("visibility","visible");
-		$('.pages.cH').find("[data-count=0]").css("visibility","visible");
-	}
 	$('.pages.cM').click(function(){
 		maxCount = $(this).find(".countObject").length;
 		if(counting1<maxCount+1)
@@ -534,6 +526,44 @@ $(function() {
 			counting2++;
 		}
 	})
+
+	$('.resetButton').click(function(){
+		if($(this).attr("class").includes(""))
+		{
+			resetCount();
+		}
+		if($(this).attr("class").includes(""))
+		{
+			resetAudio();
+		}
+		if($(this).attr("class").includes(""))
+		{
+			resetShape();
+		}
+		if($(this).attr("class").includes(""))
+		{
+			resetSort();
+		}
+	})
+
+	function resetCount(){
+		counting1=1;
+		counting2=1;
+		$(".countObject").css("visibility","hidden");
+		$('.pages.cM').find("[data-count=0]").css("visibility","visible");
+		$('.pages.cH').find("[data-count=0]").css("visibility","visible");
+	}
+	function resetAudio(){
+		$('.checkTable').find("img").css("visibility","hidden");
+	}
+	function resetShape(){
+		$('.foodshapeTable').find("img").css("visibility","hidden");
+	}
+	function resetSort(){
+		$('.dragBox').find("img").css("visibility","visible");
+		$('.dropBox').find("img").css("visibility","hidden");
+		$('.dropBox').find("img").removeClass('nodrag');
+	}
 
 	// animation
 	$('.foodAnimate').click(function(){
