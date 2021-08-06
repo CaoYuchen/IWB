@@ -33,7 +33,14 @@ $(function() {
     	// change background
     	if(curNumber == 6)
     	{
-    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[1] +'")');
+    		if(audioFlag=="aM")
+    		{
+    			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[1] +'")');
+    		}
+    		else if(audioFlag=="aH")
+    		{
+    			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[2] +'")');
+    		}
     	}
     	else if(curNumber == 7)
     	{
@@ -113,9 +120,32 @@ $(function() {
 
     	// toggle content
     	$('.pages').removeClass("active");
-    	$('#chapter'+curNumber).find("[data-value=page1]").addClass("active");
-
-    	pauseVideo();
+    	if(curNumber==6 || curNumber==7 || curNumber==8)
+    	{
+    		if(audioFlag=="aH" && curNumber==6)
+    		{
+    			$('#chapter'+curNumber).find("[data-value=page"+(aMnumber.length+1)+"]").addClass("active");
+    		}
+    		else if(countFlag=="cH" && curNumber==7)
+    		{
+    			$('#chapter'+curNumber).find("[data-value=page"+(cMnumber.length+1)+"]").addClass("active");
+    		}
+    		else if(shapeFlag=="sH" && curNumber==8)
+    		{
+    			$('#chapter'+curNumber).find("[data-value=page"+(sMnumber.length+1)+"]").addClass("active");
+    		}
+    		else
+    		{
+    			$('#chapter'+curNumber).find("[data-value=page1]").addClass("active");
+    		}
+    	}
+    	else
+    	{
+    		$('#chapter'+curNumber).find("[data-value=page1]").addClass("active");
+    	}
+    	
+    	pauseAudio();
+		pauseVideo();
     })
 
 
@@ -138,7 +168,7 @@ $(function() {
 	var aHnumber = countPagesMH($('.aH.pages').length, audioChapter,'aH');
 	
 	var audioFlag = "aM";
-	var countFlag = "coM";
+	var countFlag = "cM";
 	var shapeFlag = "sM";
 	// SideButton
 	var number = pageNumber.length;
@@ -155,7 +185,14 @@ $(function() {
     	// change background
     	if(pageNumber[index][0] == 6)
     	{
-    		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[1] +'")');
+    		if(audioFlag=="aM")
+    		{
+    			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[1] +'")');
+    		}
+    		else if(audioFlag=="aH")
+    		{
+    			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[2] +'")');
+    		}
     	}
     	else if(pageNumber[index][0] == 7)
     	{
@@ -254,7 +291,8 @@ $(function() {
 	    	buttonPath = buttonPath.replace(preNumber,curNumber);
     	}
 
-    	pauseVideo();
+    	pauseAudio();
+		pauseVideo();
 
 	})
 
@@ -271,12 +309,14 @@ $(function() {
 				audioFlag = "aH";
 				curFlag = audioFlag;
 				newNumber = aHnumber;
+				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[2] +'")');
 			}
 			else if(curChapter==7)
 			{
 				countFlag = "cH";
 				curFlag = countFlag;
 				newNumber = cHnumber;
+				resetCounting();
 			}
 			else if(curChapter==8)
 			{
@@ -292,12 +332,14 @@ $(function() {
 				audioFlag = "aM";
 				curFlag = audioFlag;
 				newNumber = aMnumber;
+				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[1] +'")');
 			}
 			else if(curChapter==7)
 			{
 				countFlag = "cM";
 				curFlag = countFlag;
 				newNumber = cMnumber;
+				resetCounting();
 			}
 			else if(curChapter==8)
 			{
@@ -330,6 +372,9 @@ $(function() {
 		// update button & number
 		countNumber(curFlag,index,pageNumber);
 		upadateMHbutton(pageNumber,index,curFlag);
+
+		pauseAudio();
+		pauseVideo();
 	})
 
 	function countPages (pages,length,n){
@@ -427,18 +472,28 @@ $(function() {
 	}
 
 	function pauseAudio(){
-		for(i=0;i<$('.audio').length;i++)
+		for(i=0;i<$('.audioSound').length;i++)
 		{
-			var media = $(".audio").eq(i);
+			var media = $(".audioSound").eq(i).get(0);
 			media.pause();
 			media.currentTime = 0;
 		}
 	}
 
-
+	var correctSound = new Audio("./media/Audio/correct.wav");
+    var incorrectSound = new Audio("./media/Audio/wrong.mp3");
 	$('.foodTable > img').click(function(){
 		number=$(this).attr('data-number');
 		$(this).parent().siblings('.checkTable').find("[data-number="+number+"]").css("visibility","visible");
+		src = $(this).parent().siblings('.checkTable').find("[data-number="+number+"]").attr("src");
+		if(src.includes("yes"))
+		{
+			correctSound.play();
+		}
+		else
+		{
+			incorrectSound.play();
+		}
 	})
 
 	$('.audio').click(function(){
@@ -449,6 +504,35 @@ $(function() {
 	$('.clickTable > img').click(function(){
 		number=$(this).attr('data-number');
 		$(this).parent().siblings('.foodshapeTable').find("[data-number="+number+"]").css("visibility","visible");
+	})
+
+	// counting
+	resetCounting();
+
+	var counting1 = 1;
+	var counting2 = 1;
+	function resetCounting(){
+		counting1=1;
+		counting2=1;
+		$(".countObject").css("visibility","hidden");
+		$('.pages.cM').find("[data-count=0]").css("visibility","visible");
+		$('.pages.cH').find("[data-count=0]").css("visibility","visible");
+	}
+	$('.pages.cM').click(function(){
+		maxCount = $(this).find(".countObject").length;
+		if(counting1<maxCount+1)
+		{
+			$(this).find("[data-count="+counting1+"]").css("visibility","visible");
+			counting1++;
+		}
+	})
+	$('.pages.cH').click(function(){
+		maxCount = $(this).find(".countObject").length;
+		if(counting2<maxCount+1)
+		{
+			$(this).find("[data-count="+counting2+"]").css("visibility","visible");
+			counting2++;
+		}
 	})
 
 	// animation
@@ -462,25 +546,6 @@ $(function() {
 		if(!$(e.target).closest(".shakeit").length)
         	$('.foodAnimate').removeClass('shakeit');
     })
-
-
-	$('.alpha').click(function(){
-		src = $(this).attr('src');
-		ans = $(this).attr('data-answer');
-		pauseAudio();
-		if(ans == "true" && src.includes('normal'))
-		{
-			src=src.replace('normal','correct');
-			correctSound.play();
-		}
-		else if(ans == "false" && src.includes('normal'))
-		{
-			src=src.replace('normal','incorrect');
-			incorrectSound.play();
-		}
-		$(this).attr('src',src);
-	})
-
 
 	// drag function
 	var SortDrag = [];
@@ -497,7 +562,7 @@ $(function() {
 		quiz = dragulaSort(
 			[$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
 			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(1)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]],cardFlag);
+			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]]);
 		return quiz;
 	}
 	function constructDragulaSort2(chapter,page){
@@ -505,12 +570,13 @@ $(function() {
 		quiz = dragulaSort(
 			[$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
 			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(1)")[0],
+			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(2)")[0],
 			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(1)")[0]],cardFlag);
+			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(1)")[0]]);
 		return quiz;
 	}
 
-	function dragulaSort(dragBoxes, cardFlag=false, bwFlag=false, quizFlag=false){
+	function dragulaSort(dragBoxes){
 		drake = dragula(
 			dragBoxes,
 	    {
@@ -520,10 +586,10 @@ $(function() {
 			isContainer: function (el) {
 			return false;
 			},
-			direction: 'horizontal',
+			direction: 'vertical',
 			removeOnSpill: true,
 			accepts: function (el, target) {
-			return true;
+			return !(target.classList.contains('nodrag'));
 			},
 			moves: function (el, source, handle) {
 			return source.classList.contains('dragBox'); 
@@ -534,77 +600,64 @@ $(function() {
 	        if(target.classList.contains('dropBox'))
 	        {
 	            var rightAnswer=target.getAttribute("data-number"), 
-	                currentAnswer=el.getAttribute("data-number");
-
+	                currentAnswer=el.getAttribute("data-number"),
+	                currentName = el.getAttribute("data-name");
 	            if(rightAnswer == currentAnswer)
 	            {
-	                src = source.querySelector('[data-number="'+currentAnswer+'"]').src.replace("normal","answer");
-	            	target.querySelector(".dropBackground").src = src;
+	                src = source.querySelector('[data-name="'+currentName+'"]').src;
+	            	target.querySelector(".empty.object").src = src;
+	            	target.querySelector(".empty.object").classList.remove("empty");
 	            	correctSound.play();
-
-	                if(cardFlag)
-	                {
-	                	src = source.parentNode.querySelector('.cardDrop > [data-number="'+currentAnswer+'"').src.replace("normal","answer");
-	                	source.parentNode.querySelector('.cardDrop > [data-number="'+currentAnswer+'"').src = src;
-	                }
-
-	                if(bwFlag)
-	                {
-	                	if(target.parentNode.querySelector('.dropBox:nth-of-type(1) > .dropBackground').src.includes('answer') && target.parentNode.querySelector('.dropBox:nth-of-type(2) > .dropBackground').src.includes('answer'))
-	                	{
-	                		target.parentNode.parentNode.querySelector('.bwCorrect').style.display="block";
-	                		target.parentNode.parentNode.querySelector('.bwCorrect').classList.add('animated', 'bounceInDown', 'fast');
-	                	}
-	                }
-	                if(quizFlag)
-	                {
-	                	if(target.parentNode.querySelector('.dropBox > .dropBackground').src.includes('answer'))
-	                	{
-	                		console.log("1");
-	                		target.parentNode.parentNode.querySelector('.quizCorrect').style.display="block";
-	                		target.parentNode.parentNode.querySelector('.quizCorrect').classList.add('animated', 'bounceInDown', 'fast');
-	                	}
-	                }
 	            }
 	            else
 	            {
-	                source.querySelector('[data-number="'+currentAnswer+'"]').style.visibility="visible";
+	                source.querySelector('[data-name="'+currentName+'"]').style.visibility="visible";
 	                incorrectSound.play();
 	            }       
 	        }
 
 	        el.remove();
+	        checknumber();
 
 	    }).on('cancel',function(el, container, source) {
 	    	// show the source imagex
-	    	var currentAnswer=el.getAttribute("data-number");
-	    	source.querySelector('[data-number="'+currentAnswer+'"]').style.visibility="visible";
+	    	var currentName=el.getAttribute("data-name");
+	    	source.querySelector('[data-name="'+currentName+'"]').style.visibility="visible";
 	    }).on('over',function(el, container, source) {
-	    	// // hover change dropBox outlook
-	     //    updateDropBoxOutlook();
+	    	// hover change dropBox outlook
+	        $(".backgroundBox.hover").removeClass('hover');
+	        if(container.classList.contains("dropBox"))
+	        {
+	            container.querySelector('.backgroundBox').classList.add('hover');
+	        }
 
-	     //    if(container.classList.contains("dropBox"))
-	     //    {
-	     //        src = container.querySelector(".dropBackground").src.replace("box","");
-	     //        container.querySelector(".dropBackground").src = src;
-	     //        container.classList.add('hover');
-	     //    }
+	        // hover change dragging item outlook
+	        // src = $(".gu-mirror").attr("src").replace("normal","active");
+	        // $(".gu-mirror").attr("src",src);
 
-	     //    // hover change dragging item outlook
-	     //    // $(".gu-mirror").css({"box-shadow": "0px 10px 22px -4px rgba(0,0,0,0.64)"});
-	     //    src = $(".gu-mirror").attr("src").replace("normal","active");
-	     //    $(".gu-mirror").attr("src",src);
+	        // hover change target temp item look
+	        // $(".gu-transit").hide(); //not working
 
-	     //    // hide the source image
-	    	// var currentAnswer=el.getAttribute("data-number");
-	    	// source.querySelector('[data-number="'+currentAnswer+'"]').style.visibility="hidden";
-	    	// // hide target gray image
-	    	// el.style.display="none";
+	        // hide the source image
+	    	var currentAnswer=el.getAttribute("data-name");
+	    	source.querySelector('[data-name="'+currentAnswer+'"]').style.visibility="hidden";
+	    	// hide target gray image
+	    	el.style.display="none";
+
 	    }).on('out',function(el, container, source){
 	        // // after drop, change dropBox outlook
-	        // updateDropBoxOutlook();
+	        $(".backgroundBox.hover").removeClass('hover');
 	    })
 	    return drake;
+	}
+	function checknumber() {
+		$('.dropBox').each(function(){
+			console.log($(this).find(".empty").length)
+	        if($(this).find(".empty").length < 1)
+	            $(this).addClass('nodrag');
+	        else
+	            $(this).removeClass('nodrag');
+	    });
 	}
 
 

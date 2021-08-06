@@ -179,7 +179,7 @@
 	left: 0%;
 	width:100%;
 }
-#chapter8 > .sM > .sortTable > img {
+#chapter8 > .sM > .sortTable > div {
 	margin: 0 7.2%;
 }
 #chapter8 > .sM > .dragBox{
@@ -190,16 +190,42 @@
 #chapter8 > .sM > .dragBox > img {
 	margin: 0 1%;
 }
-#chapter8 > .sM > .dropBox:nth-child(3){
-	top:35%;
-	left: -21%;
-	width:100%;
+#chapter8 > .sM > .sortTable > .dropBox{
+	width:27.9%;
 }
-#chapter8 > .sM > .dropBox:nth-child(4){
-	top:30%;
-	left: 21.5%;
-	width:100%;
+#chapter8 > .sM > .sortTable > [data-number="1"] > .object:nth-child(2){
+	top: 42%;
+	left: 22%;
 }
+#chapter8 > .sM > .sortTable > [data-number="1"] > .object:nth-child(3){
+	top: 40%;
+	left: 28%;
+}
+#chapter8 > .sM > .sortTable > [data-number="1"] > .object:nth-child(4){
+	top: 65%;
+	left: 22%;
+}
+#chapter8 > .sM > .sortTable > [data-number="1"] > .object:nth-child(5){
+	top: 65%;
+	left: 28%;
+}
+#chapter8 > .sM > .sortTable > [data-number="2"] > .object:nth-child(2){
+	top: 25%;
+	left: 63%;
+}
+#chapter8 > .sM > .sortTable > [data-number="2"] > .object:nth-child(3){
+	top: 25%;
+	left: 72%;
+}
+#chapter8 > .sM > .sortTable > [data-number="2"] > .object:nth-child(4){
+	top: 52%;
+	left: 63%;
+}
+#chapter8 > .sM > .sortTable > [data-number="2"] > .object:nth-child(5){
+	top: 52%;
+	left: 72%;
+}
+
 #chapter8 > .sH > .clickTable{
 	top:29%;
 	left: 0%;
@@ -229,7 +255,7 @@
 	left: 0%;
 	width:100%;
 }
-#chapter8 > .sH > .sortTable > img {
+#chapter8 > .sH > .sortTable > div {
 	margin: 0 3.39%;
 }
 #chapter8 > .sH > .dragBox:nth-child(1){
@@ -259,6 +285,57 @@
 	top:30%;
 	left: 21.5%;
 	width:100%;
+}
+#chapter8 > .sH > .sortTable > .dropBox{
+	width:22.1%;
+}
+#chapter8 > .sH > .sortTable > [data-number="1"] > .object:nth-child(2){
+	top: 42%;
+	left: 16%;
+}
+#chapter8 > .sH > .sortTable > [data-number="1"] > .object:nth-child(3){
+	top: 42%;
+	left: 21%;
+}
+#chapter8 > .sH > .sortTable > [data-number="1"] > .object:nth-child(4){
+	top: 65%;
+	left: 16%;
+}
+#chapter8 > .sH > .sortTable > [data-number="1"] > .object:nth-child(5){
+	top: 65%;
+	left: 21%;
+}
+#chapter8 > .sH > .sortTable > [data-number="2"] > .object:nth-child(2){
+	top: 25%;
+	left: 44%;
+}
+#chapter8 > .sH > .sortTable > [data-number="2"] > .object:nth-child(3){
+	top: 25%;
+	left: 51%;
+}
+#chapter8 > .sH > .sortTable > [data-number="2"] > .object:nth-child(4){
+	top: 52%;
+	left: 44%;
+}
+#chapter8 > .sH > .sortTable > [data-number="2"] > .object:nth-child(5){
+	top: 52%;
+	left: 51%;
+}
+#chapter8 > .sH > .sortTable > [data-number="3"] > .object:nth-child(2){
+	top: 25%;
+	left: 73%;
+}
+#chapter8 > .sH > .sortTable > [data-number="3"] > .object:nth-child(3){
+	top: 25%;
+	left: 80%;
+}
+#chapter8 > .sH > .sortTable > [data-number="3"] > .object:nth-child(4){
+	top: 52%;
+	left: 73%;
+}
+#chapter8 > .sH > .sortTable > [data-number="3"] > .object:nth-child(5){
+	top: 52%;
+	left: 80%;
 }
 
 

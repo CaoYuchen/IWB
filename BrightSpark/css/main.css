@@ -1,5 +1,5 @@
 @font-face {
-  font-family: EFCircularWeb-Medium.woff;
+  font-family: EFCircularWeb-Medium;
   src: url(EFCircularWeb-Medium.woff);
 }
 
@@ -144,11 +144,15 @@ body {
 	z-index: 50;
 }
 
+.smallTitle{
+	font-family: EFCircularWeb-Bold;
+}
+
 .leftButtonMenu .countNumber{
-	margin: 0% 0% 0 15%;
+	margin: 0% 0% 0 17%;
 }
 .rightButtonMenu .countNumber{
-	margin: 0% 25% 0 0%;
+	margin: 0% 22% 0 0%;
 }
 
 .frontNumber{
@@ -157,7 +161,7 @@ body {
 }
 
 
-.countTable, .checkTable, .foodTable, .audioTable, .shapeTable, .foodshapeTable, .clickTable, .sortTable, .dragBox, .dropBox{
+.countTable, .checkTable, .foodTable, .audioTable, .shapeTable, .foodshapeTable, .clickTable, .sortTable, .dragBox{
 	position: fixed;
 	text-align: center;
 }
@@ -183,63 +187,29 @@ body {
 	z-index: 50;
 }
 
-.sortTable{
-	z-index: -100;
-}
-
 .foodshapeTable img{
 	visibility: hidden;
 }
 
-.backgroundBox{
-	opacity: 0;
+.hover{
+	filter: brightness(1.25);
+	opacity: 0.8;
 }
 
-.foodText{
-	display: none;
-	font-family: EFCircularWeb-Medium;
-	color: black;
-	font-size: 80px;
-	z-index: 50;
-	left: 50%;
-	top: 50%;
-	right:0;
-	width:1200px;
-	margin-left:-600px;
-	margin-top: 230px;
-	position: fixed;
-	text-align: center;
+.object{
+	position: absolute;
 }
 
+.empty{
+	visibility: hidden;
+}
 
 .dropBox{
 	display: inline-block;
 }
 
 
-.foodPriceLeft{
-	display: inline-block;
-	position: absolute;
-	width: 600px;
-	left: -20px;
-	top: -50px;
-}
 
-.foodPriceRight{
-	display: inline-block;
-	position: absolute;
-	width: 600px;
-	right: 10px;
-	top: -50px;
-}
-
-.foodPriceLeft > img, .foodPriceRight >img{
-	margin: 8px 6px;
-}
-
-.foodPriceMid{
-	margin-top: 150px;
-}
 
 .alphaBox{
 	top:50%;
@@ -257,8 +227,6 @@ body {
 	margin: 0 100px;
 	cursor: pointer;
 }
-
-
 
 
 @-webkit-keyframes shakeit {
