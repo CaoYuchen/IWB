@@ -146,6 +146,7 @@ $(function() {
     	
     	pauseAudio();
 		pauseVideo();
+		stopAnimation();
     })
 
 
@@ -293,6 +294,7 @@ $(function() {
 
     	pauseAudio();
 		pauseVideo();
+		stopAnimation();
 
 	})
 
@@ -375,6 +377,7 @@ $(function() {
 
 		pauseAudio();
 		pauseVideo();
+		stopAnimation();
 	})
 
 	function countPages (pages,length,n){
@@ -482,18 +485,25 @@ $(function() {
 
 	var correctSound = new Audio("./media/Audio/correct.wav");
     var incorrectSound = new Audio("./media/Audio/wrong.mp3");
+    function playSound(sound){
+    	sound.pause();
+		sound.currentTime = 0;
+		sound.play();
+    }
 	$('.foodTable > img').click(function(){
 		number=$(this).attr('data-number');
 		$(this).parent().siblings('.checkTable').find("[data-number="+number+"]").css("visibility","visible");
 		src = $(this).parent().siblings('.checkTable').find("[data-number="+number+"]").attr("src");
 		if(src.includes("yes"))
 		{
-			correctSound.play();
+			playSound(correctSound);
 		}
 		else
 		{
-			incorrectSound.play();
+			playSound(incorrectSound);
 		}
+
+		$(this).parent().siblings('.checkTable').find("[data-number="+number+"]").addClass("animated fadeInDown faster");
 	})
 
 	$('.audio').click(function(){
@@ -501,9 +511,21 @@ $(function() {
 		audio.play();
 	})
 
+	var lastClick=0;
 	$('.clickTable > img').click(function(){
 		number=$(this).attr('data-number');
 		$(this).parent().siblings('.foodshapeTable').find("[data-number="+number+"]").css("visibility","visible");
+		$(this).parent().siblings('.foodshapeTable').find("[data-number="+number+"]").addClass("animated fadeIn");
+		$(this).parent().siblings('.shapeTable').find("[data-number="+number+"]").addClass("animated fadeOut");
+
+		if(lastClick)
+		{
+			lastClick.css("visibility","hidden");
+		}
+		lastClick=$(this).parent().siblings('.shapeTable').find("[data-number="+number+"]");
+		setTimeout(function(){
+	    	lastClick.css("visibility","hidden");
+	    },400);
 	})
 
 	// counting
@@ -515,7 +537,9 @@ $(function() {
 		if(counting1<maxCount+1)
 		{
 			$(this).find("[data-count="+counting1+"]").css("visibility","visible");
-			counting1++;
+			$(this).find("[data-count="+counting1+"]").addClass("animated bounceIn");
+
+		    counting1++;
 		}
 	})
 	$('.pages.cH').click(function(){
@@ -523,7 +547,9 @@ $(function() {
 		if(counting2<maxCount+1)
 		{
 			$(this).find("[data-count="+counting2+"]").css("visibility","visible");
-			counting2++;
+			$(this).find("[data-count="+counting2+"]").addClass("animated bounceIn");
+
+		    counting2++;
 		}
 	})
 
@@ -550,19 +576,30 @@ $(function() {
 		counting1=1;
 		counting2=1;
 		$(".countObject").css("visibility","hidden");
+		$(".countObject").removeClass("animated bounceIn");
 		$('.pages.cM').find("[data-count=0]").css("visibility","visible");
 		$('.pages.cH').find("[data-count=0]").css("visibility","visible");
 	}
 	function resetAudio(){
 		$('.checkTable').find("img").css("visibility","hidden");
+		$('.checkTable').find("img").removeClass("animated fadeInDown faster");
 	}
 	function resetShape(){
 		$('.foodshapeTable').find("img").css("visibility","hidden");
+		$('.foodshapeTable').find("img").removeClass("animated fadeIn");
+		$('.shapeTable').find("img").removeClass("animated fadeOut");
 	}
 	function resetSort(){
 		$('.dragBox').find("img").css("visibility","visible");
 		$('.dropBox').find("img").css("visibility","hidden");
 		$('.dropBox').find("img").removeClass('nodrag');
+	}
+
+	function stopAnimation(){
+		$(".countObject").removeClass("animated bounceIn");
+		$('.checkTable').find("img").removeClass("animated fadeInDown faster");
+		$('.foodshapeTable').find("img").removeClass("animated fadeIn");
+		$('.shapeTable').find("img").removeClass("animated fadeOut");
 	}
 
 	// animation
@@ -637,12 +674,14 @@ $(function() {
 	                src = source.querySelector('[data-name="'+currentName+'"]').src;
 	            	target.querySelector(".empty.object").src = src;
 	            	target.querySelector(".empty.object").classList.remove("empty");
-	            	correctSound.play();
+	            	
+	            	playSound(correctSound);
 	            }
 	            else
 	            {
 	                source.querySelector('[data-name="'+currentName+'"]').style.visibility="visible";
-	                incorrectSound.play();
+	                
+	                playSound(incorrectSound);
 	            }       
 	        }
 
