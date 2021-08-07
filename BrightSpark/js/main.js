@@ -483,6 +483,19 @@ $(function() {
 		}
 	}
 
+	$('#helloVideo, #restaurantVideo, #goodbyeVideo').on('touchstart',function(e) {
+		e.preventDefault();
+		video = $(this).get(0);
+		if (video.paused)
+		{
+			video.play(); 
+		}  
+		else
+		{
+	  		video.pause();
+		}   
+	})
+
 	var correctSound = new Audio("./media/Audio/correct.wav");
     var incorrectSound = new Audio("./media/Audio/wrong.mp3");
     function playSound(sound){
@@ -656,7 +669,7 @@ $(function() {
 			direction: 'vertical',
 			removeOnSpill: true,
 			accepts: function (el, target) {
-			return !(target.classList.contains('nodrag'));
+			return !(target.classList.contains('nodrag'))&& !(target.classList.contains('dragBox'));
 			},
 			moves: function (el, source, handle) {
 			return source.classList.contains('dragBox'); 
@@ -721,7 +734,7 @@ $(function() {
 	}
 	function checknumber() {
 		$('.dropBox').each(function(){
-			console.log($(this).find(".empty").length)
+			// console.log($(this).find(".empty").length)
 	        if($(this).find(".empty").length < 1)
 	            $(this).addClass('nodrag');
 	        else
@@ -730,4 +743,13 @@ $(function() {
 	}
 
 
+})
+
+$(function(){
+    document.oncontextmenu = function(){
+        return false;
+    }
+    document.onselectstart = function() {
+        return false;
+    }
 })
