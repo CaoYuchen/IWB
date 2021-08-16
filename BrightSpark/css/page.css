@@ -72,6 +72,12 @@
 	margin: 0 1%;
 }
 
+/*#chapter6 .resetButton {
+	top: 21.57%;
+	left: 57.915%;
+	width: 4.17%;
+}*/
+
 
 #chapter7 > [data-value="page1"] > .imageTitle:nth-child(1){
 	top:4.2%;
@@ -148,6 +154,12 @@
 #chapter7 > [data-value="page2"] > .countTable:nth-child(6) img{
 	margin: 0 2%;
 }
+
+/*#chapter7 .resetButton {
+	top: 17.57%;
+	left: 47.915%;
+	width: 4.17%;
+}*/
 
 
 #chapter8 > .sM > .clickTable{
@@ -251,7 +263,7 @@
 	margin: 0 3.39%;
 }
 #chapter8 > .sH > .sortTable{
-	top:18.8%;
+	top:28.8%;
 	left: 0%;
 	width:100%;
 }
@@ -259,12 +271,12 @@
 	margin: 0 3.39%;
 }
 #chapter8 > .sH > .dragBox:nth-child(1){
-	top:62.74%;
+	top:68.74%;
 	left: 0%;
 	width:100%;
 }
 #chapter8 > .sH > .dragBox:nth-child(2){
-	top:78.57%;
+	top:82.57%;
 	left: 0%;
 	width:100%;
 }
@@ -337,6 +349,12 @@
 	top: 52%;
 	left: 80%;
 }
+
+/*#chapter8 .resetButton {
+	top: 21.57%;
+	left: 47.915%;
+	width: 4.17%;
+}*/
 
 
 #chapter9 > [data-value="page1"] > .pageTitle:nth-child(2){

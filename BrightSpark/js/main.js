@@ -318,7 +318,6 @@ $(function() {
 				countFlag = "cH";
 				curFlag = countFlag;
 				newNumber = cHnumber;
-				resetCount();
 			}
 			else if(curChapter==8)
 			{
@@ -341,7 +340,6 @@ $(function() {
 				countFlag = "cM";
 				curFlag = countFlag;
 				newNumber = cMnumber;
-				resetCount();
 			}
 			else if(curChapter==8)
 			{
@@ -545,7 +543,7 @@ $(function() {
 	resetCount();
 	var counting1 = 1;
 	var counting2 = 1;
-	$('.pages.cM').click(function(){
+	$('.pages.cM').not("> .resetButton").click(function(){
 		maxCount = $(this).find(".countObject").length;
 		if(counting1<maxCount+1)
 		{
@@ -555,7 +553,7 @@ $(function() {
 		    counting1++;
 		}
 	})
-	$('.pages.cH').click(function(){
+	$('.pages.cH').not("> .resetButton").click(function(){
 		maxCount = $(this).find(".countObject").length;
 		if(counting2<maxCount+1)
 		{
@@ -567,25 +565,26 @@ $(function() {
 	})
 
 	$('.resetButton').click(function(){
-		if($(this).attr("class").includes(""))
+		if($(this).attr("class").includes("Audio"))
 		{
-			resetCount();
+			resetAudio($(this));
 		}
-		if($(this).attr("class").includes(""))
+		if($(this).attr("class").includes("Count"))
 		{
-			resetAudio();
+			resetCountIndividual($(this));
 		}
-		if($(this).attr("class").includes(""))
+		if($(this).attr("class").includes("Shape"))
 		{
-			resetShape();
+			resetShape($(this));
 		}
-		if($(this).attr("class").includes(""))
+		if($(this).attr("class").includes("Sort"))
 		{
-			resetSort();
+			resetSort($(this));
 		}
+		stopAnimation();
 	})
 
-	function resetCount(){
+	function resetCount(target){
 		counting1=1;
 		counting2=1;
 		$(".countObject").css("visibility","hidden");
@@ -593,19 +592,35 @@ $(function() {
 		$('.pages.cM').find("[data-count=0]").css("visibility","visible");
 		$('.pages.cH').find("[data-count=0]").css("visibility","visible");
 	}
-	function resetAudio(){
-		$('.checkTable').find("img").css("visibility","hidden");
-		$('.checkTable').find("img").removeClass("animated fadeInDown faster");
+	function resetCountIndividual(target){
+		target.siblings(".countTable").find(".countObject").css("visibility","hidden");
+		target.siblings(".countTable").find(".countObject").removeClass("animated bounceIn");
+		if(target.parent().attr("class").includes("cM"))
+		{
+			counting1=0;
+			$('.pages.cM').find("[data-count=0]").css("visibility","visible");
+		}
+		else if(target.parent().attr("class").includes("cH"))
+		{
+			counting2=0;
+			$('.pages.cH').find("[data-count=0]").css("visibility","visible");
+		}
 	}
-	function resetShape(){
-		$('.foodshapeTable').find("img").css("visibility","hidden");
-		$('.foodshapeTable').find("img").removeClass("animated fadeIn");
-		$('.shapeTable').find("img").removeClass("animated fadeOut");
+	function resetAudio(target){
+		target.siblings(".checkTable").find("img").css("visibility","hidden");
+		target.siblings(".checkTable").find("img").removeClass("animated fadeInDown faster");
 	}
-	function resetSort(){
-		$('.dragBox').find("img").css("visibility","visible");
-		$('.dropBox').find("img").css("visibility","hidden");
-		$('.dropBox').find("img").removeClass('nodrag');
+	function resetShape(target){
+		target.siblings('.foodshapeTable').find("img").css("visibility","hidden");
+		target.siblings('.foodshapeTable').find("img").removeClass("animated fadeIn");
+		target.siblings('.shapeTable').find("img").removeClass("animated fadeOut");
+		target.siblings('.shapeTable').find("img").css("visibility","visible");
+		lastClick = 0;
+	}
+	function resetSort(target){
+		target.siblings('.dragBox').find("img").css("visibility","visible");
+		target.siblings('.sortTable').find(".dropBox .object").removeClass('nodrag');
+		target.siblings('.sortTable').find(".dropBox .object").addClass('empty');
 	}
 
 	function stopAnimation(){
@@ -614,18 +629,6 @@ $(function() {
 		$('.foodshapeTable').find("img").removeClass("animated fadeIn");
 		$('.shapeTable').find("img").removeClass("animated fadeOut");
 	}
-
-	// animation
-	$('.foodAnimate').click(function(){
-		$('.foodAnimate').removeClass('shakeit');
-		$(this).addClass('shakeit');
-	})
-
-	// action when click outside target
-	$(document).on('click', function(e){
-		if(!$(e.target).closest(".shakeit").length)
-        	$('.foodAnimate').removeClass('shakeit');
-    })
 
 	// drag function
 	var SortDrag = [];
