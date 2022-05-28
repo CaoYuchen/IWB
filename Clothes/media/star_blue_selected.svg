@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="58px" viewBox="0 0 60 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>sticker/star blue</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-22.6%" y="-23.1%" width="145.3%" height="146.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.219607843   0 0 0 0 0.776470588   0 0 0 0 0.956862745  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <polygon id="path-2" points="0 0.744 52.191 0.744 52.191 51 0 51"></polygon>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sticker/star-blue" filter="url(#filter-1)" transform="translate(4.000000, 1.000000)">
+            <g id="Group-3" transform="translate(0.000000, 0.256300)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M13.2573,51.0002 C11.6873,51.0002 10.3273,50.3412 9.4283,49.1452 C8.1943,47.5022 8.0173,45.1242 8.9003,42.0762 L9.8663,38.7472 L9.8723,38.7432 L11.5643,32.8842 L5.6673,28.5272 L3.8633,27.1872 C-0.3397,24.0832 -0.2337,21.2552 0.2043,19.8462 C0.6423,18.4372 2.1573,16.0492 7.3843,15.8732 L8.5373,15.8472 L11.5033,15.7132 L11.5203,15.7442 L16.9683,15.5702 L20.0073,6.4932 C21.6723,1.4912 24.4233,0.7432 25.9143,0.7432 C27.7023,0.7432 30.1833,1.7182 31.8513,6.3592 L35.1083,15.3572 L43.5443,15.4322 L44.6823,15.4472 C49.8983,15.4832 51.4753,17.8332 51.9503,19.2292 C52.4243,20.6272 52.6043,23.4522 48.4723,26.6732 L47.5573,27.3712 L40.9043,32.5382 L43.7793,41.6672 C44.7463,44.7162 44.6163,47.1152 43.3903,48.7902 C42.4923,50.0182 41.1123,50.6942 39.5053,50.6942 C37.9443,50.6942 36.1843,50.0382 34.2753,48.7432 L32.4193,47.4882 L26.3613,43.3662 L19.4843,48.2812 L18.5483,48.9442 C16.6263,50.3082 14.8453,51.0002 13.2573,51.0002" id="Fill-1" fill="#FEFEFE" mask="url(#mask-3)"></path>
+            </g>
+            <path d="M44.6416,18.7027 L43.5176,18.6877 L32.9956,18.5967 L29.4276,8.7297 L29.0286,7.6307 C27.2776,2.7597 24.4846,2.7977 22.8526,7.7007 L22.1396,9.8327 L19.1496,18.7587 L9.7436,19.0587 L9.7396,19.0517 L8.6076,19.1017 L7.4846,19.1287 C2.3106,19.3017 1.4936,21.9637 5.6516,25.0347 L7.4496,26.3717 L15.0246,31.9677 L12.4136,41.0117 L12.4056,41.0157 L11.7816,43.1687 C10.3416,48.1347 12.6016,49.7407 16.8126,46.7537 L17.7386,46.0987 L18.6536,45.4427 L26.3196,39.9657 L34.0996,45.2597 L35.9586,46.5167 C40.2506,49.4277 42.4846,47.7637 40.9166,42.8217 L40.5666,41.7057 L37.4156,31.7057 L45.7376,25.2417 L46.6286,24.5627 C50.7106,21.3817 49.8266,18.7397 44.6416,18.7027" id="Fill-4" fill="#38C6F4"></path>
+        </g>
+    </g>
+</svg>

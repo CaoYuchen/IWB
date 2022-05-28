@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="26px" viewBox="0 0 30 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>up</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.989 29.1815146 0.989 29.1815146 26.4757 0 26.4757"></polygon>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Student-page-timer-Copy" transform="translate(-813.000000, -557.000000)">
+            <g id="up" transform="translate(813.000000, 556.011000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-5"></g>
+                <path d="M11.1054,3.5757 C13.0294,0.1237 16.1534,0.1297 18.0744,3.5757 L28.3764,20.2277 C30.3004,23.6797 28.6584,26.4757 24.7044,26.4757 L4.4754,26.4757 C0.5234,26.4757 -1.1176,23.6737 0.8034,20.2277 L11.1054,3.5757 Z" id="Fill-4" fill="#4F3174" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

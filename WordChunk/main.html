@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>IWB</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script type="text/javascript" src="./js/jQuery-3.3.1.js"></script>
+    <!-- popover -->
+     <link type="text/css" href="./css/popover.css" rel='stylesheet'>
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <!-- Timer -->
+    <link type="text/css" href="./Timer/css/Timerpop.css" rel='stylesheet'>
+    <script type="text/javascript" src="./Timer/js/Timerpop.js"></script>
+    <!-- Roster -->
+    <link type="text/css" href="./css/roster.css" rel='stylesheet'>
+    <script type="text/javascript" src="./js/roster.js" ></script>
+
+</head>
+
+<body>
+    <!-- Drag -->
+    <link type="text/css" href="./css/dragula.css" rel='stylesheet'>
+    <script type="text/javascript" src="./js/dragula.min.js" ></script>   
+    <!-- hidden elements -->
+    <canvas id="can" width="541px" height="376px" style="display:none"></canvas>
+    <img id="bkgimg" src="./media/lined-paper.svg" width="541px" style="display:none">
+
+    <div class="students">
+        <div class="member-plus"><img id='plus' src='./media/createnew.svg' width="268px" height="184px"></div>
+
+        <div class="member-layer"><div class="duplicate" id="dup1"><img class="member" id="m1" width="268px" height="184px"><img class="delete" id="d1" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p1"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup2"><img class="member" id="m2" width="268px" height="184px"><img class="delete" id="d2" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p2"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup3"><img class="member" id="m3" width="268px" height="184px"><img class="delete" id="d3" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p3"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup4"><img class="member" id="m4" width="268px" height="184px"><img class="delete" id="d4" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p4"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup5"><img class="member" id="m5" width="268px" height="184px"><img class="delete" id="d5" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p5"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup6"><img class="member" id="m6" width="268px" height="184px"><img class="delete" id="d6" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p6"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup7"><img class="member" id="m7" width="268px" height="184px"><img class="delete" id="d7" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p7"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup8"><img class="member" id="m8" width="268px" height="184px"><img class="delete" id="d8" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p8"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup9"><img class="member" id="m9" width="268px" height="184px"><img class="delete" id="d9" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p9"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup10"><img class="member" id="m10" width="268px" height="184px"><img class="delete" id="d10" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p10"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup11"><img class="member" id="m11" width="268px" height="184px"><img class="delete" id="d11" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p11"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup12"><img class="member" id="m12" width="268px" height="184px"><img class="delete" id="d12" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p12"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup13"><img class="member" id="m13" width="268px" height="184px"><img class="delete" id="d13" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p13"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup14"><img class="member" id="m14" width="268px" height="184px"><img class="delete" id="d14" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p14"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup15"><img class="member" id="m15" width="268px" height="184px"><img class="delete" id="d15" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p15"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+        <div class="member-layer"><div class="duplicate" id="dup16"><img class="member" id="m16" width="268px" height="184px"><img class="delete" id="d16" src="./media/delete.png" width="48px"><img class="deletemask" src="./media/deletemask.png" width="268px" height="184px"><button class="groupplus" id="p16"><img src="./media/greenplus.svg" width="30px"></button></div></div>
+    </div>
+
+    <div class="groups">
+
+        <div class="group-s">
+            <div class="drag-layer nodrag" id="drag1"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag2"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag3"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag4"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag5"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag6"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag7"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag8"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag9"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag10"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag11"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag12"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag13"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag14"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag15"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+            <div class="drag-layer nodrag" id="drag16"><img class="drag" width="180px" height="123px"><img class="grey" src="./media/grey.svg" width="180px" height="123px"></div>
+        </div>
+
+        <!-- <button id='grpcancel'><image src='./media/cancel.svg' height='40px'></image></button> -->
+        <div class="group-g">
+            <div class="twogrp">
+                <div class="g1">
+                    <div class="stitle"><span>Group A</span></div>    
+                    <!-- <button class="groupbtn" id='grpminus'><image src='./media/groupminus.svg' height='30px'></image></button> -->
+                    <!-- <button class="groupbtn" id='grpplus'><image src='./media/groupplus.svg' height='30px'></image></button> -->
+                    <div class="groupmember"></div><div class="score"><span>Scores:</span><div class="score-star"></div></div>
+                </div>
+                <div class="g2">
+                    <div class="stitle"><span>Group B</span></div>
+                    <!-- <button class="groupbtn" id='grpminus'><image src='./media/groupminus.svg' height='30px'></image></button> -->
+                    <!-- <button class="groupbtn" id='grpplus'><image src='./media/groupplus.svg' height='30px'></image></button> -->
+                    <div class="groupmember"></div><div class="score"><span>Scores:</span><div class="score-star"></div></div>
+                </div>
+            </div>
+            <div class="threegrp">
+                <div class="g1">
+                    <div class="stitle"><span>Group A</span></div>
+                    <!-- <button class="groupbtn" id='grpminus'><image src='./media/groupminus.svg' height='30px'></image></button> -->
+                    <!-- <button class="groupbtn" id='grpplus'><image src='./media/groupplus.svg' height='30px'></image></button> -->
+                    <div class="groupmember"></div><div class="score"><span>Scores:</span><div class="score-star"></div></div>
+                </div>
+                <div class="g2">
+                    <div class="stitle"><span>Group B</span></div>
+                    <!-- <button class="groupbtn" id='grpminus'><image src='./media/groupminus.svg' height='30px'></image></button> -->
+                    <!-- <button class="groupbtn" id='grpplus'><image src='./media/groupplus.svg' height='30px'></image></button> -->
+                    <div class="groupmember"></div><div class="score"><span>Scores:</span><div class="score-star"></div></div>
+                </div>
+                <div class="g3">
+                    <div class="stitle"><span>Group C</span></div>
+                    <!-- <button class="groupbtn" id='grpminus'><image src='./media/groupminus.svg' height='30px'></image></button> -->
+                    <!-- <button class="groupbtn" id='grpplus'><image src='./media/groupplus.svg' height='30px'></image></button> -->
+                    <div class="groupmember"></div><div class="score"><span>Scores:</span><div class="score-star"></div></div>
+                </div>
+            </div>
+            <div class="fourgrp">
+                <div class="g1">
+                    <div class="stitle"><span>Group A</span></div>
+                    <!-- <button class="groupbtn" id='grpminus'><image src='./media/groupminus.svg' height='30px'></image></button> -->
+                    <!-- <button class="groupbtn" id='grpplus'><image src='./media/groupplus.svg' height='30px'></image></button> -->
+                    <div class="groupmember"></div><div class="score"><span>Scores:</span><div class="score-star"></div></div>
+                </div>
+                <div class="g2">
+                    <div class="stitle"><span>Group B</span></div>
+                    <!-- <button class="groupbtn" id='grpminus'><image src='./media/groupminus.svg' height='30px'></image></button> -->
+                    <!-- <button class="groupbtn" id='grpplus'><image src='./media/groupplus.svg' height='30px'></image></button> -->
+                    <div class="groupmember"></div><div class="score"><span>Scores:</span><div class="score-star"></div></div>
+                </div>
+                <br>
+                <div class="g3">
+                    <div class="stitle"><span>Group C</span></div>
+                    <!-- <button class="groupbtn" id='grpminus'><image src='./media/groupminus.svg' height='30px'></image></button> -->
+                    <!-- <button class="groupbtn" id='grpplus'><image src='./media/groupplus.svg' height='30px'></image></button> -->
+                    <div class="groupmember"></div><div class="score"><span>Scores:</span><div class="score-star"></div></div>
+                </div>
+                <div class="g4">
+                    <div class="stitle"><span>Group D</span></div>
+                    <!-- <button class="groupbtn" id='grpminus'><image src='./media/groupminus.svg' height='30px'></image></button> -->
+                    <!-- <button class="groupbtn" id='grpplus'><image src='./media/groupplus.svg' height='30px'></image></button> -->
+                    <div class="groupmember"></div><div class="score"><span>Scores:</span><div class="score-star"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="topbutton">
+        <!-- Title -->
+        <image class="titleImage" src='./media/Students.svg' height='49px' width='183px'></image>
+        <!-- Button -->
+        <button class="mybtn" id='morestars' data-toggle="popover" data-placement="bottom"><img src='./media/morestars.svg' width='52px'></button>
+        <button class="mybtn" id='currentstar'><img src='./media/star_blue.svg' width='55px' height="55px" style="margin-bottom:-5px "></button>
+        <button class="mybtn" id="deletestar"><img src="./media/erasestar.svg" width="38px"></button>
+        <script>
+         $(document).ready(function(){
+            $('[data-toggle="popover"]').popover({
+                html: 'true',
+                trigger: 'focus',
+                content: '  <button class="star" id="s1"><img src="./media/star_blue.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s2"><img src="./media/star_brown.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s3"><img src="./media/star_green.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s4"><img src="./media/star_pink.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s5"><img src="./media/star_red.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s6"><img src="./media/star_yellow.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s7"><img src="./media/Ben.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s8"><img src="./media/Kev.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s9"><img src="./media/Mel.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s10"><img src="./media/Roddy.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s11"><img src="./media/Vic.svg" width="55px" height="55px"></button>\
+                            <button class="star" id="s12"><img src="./media/Zap.svg" width="55px" height="55px"></button>'
+            });
+        });   
+        </script>
+        <!-- <button class="nostar" id="hidestar"><img src="./media/cancel.svg" width="30px"></button> -->
+    </div>
+
+     <div class="rightbuttons">
+        <!-- List -->
+        <button class="active student-menu" id="list_right"><img src="./media/student-group.svg" width="58px"></button>
+        <!-- Group -->
+        <div style="margin-top:50px">
+        <button class='active teamchoice' id="group_right"><img src='./media/team.svg' width='58px'></button>
+        </div>
+        <!-- Timer -->
+        <div style="margin-top:50px">
+            <button class='Timerpopup' id='timer_right'><img src='./Timer/media/alarm-clock.svg' width='58px'></button>
+        </div>
+        <!-- map -->
+        <div style="margin-top:50px">
+            <button class="active map-overlay-menu" id="map_right"><img src="./wordchunk/media/map.svg" width="58px"></button>
+        </div>
+        <!-- Spinner -->
+        <div style="margin-top:50px">
+            <button class="active Spin-overlay-menu" id="spinner_right"><img src="./wordchunk/media/wheel.svg" width="58px"></button>
+        </div>
+    </div>
+
+    <div class="leftbuttons">
+        <!-- List -->
+        <button class="active student-menu" id="list_left"><img src="./media/student-group.svg" width="58px"></button>
+        <!-- Group -->
+        <div style="margin-top:50px">
+        <button class='active teamchoice' id='group_left'><img src='./media/team.svg' width='58px'></button>
+        </div>
+        <!-- Timer -->
+        <div style="margin-top:50px">
+            <button class='Timerpopup' id="timer_left"><img src='./Timer/media/alarm-clock.svg' width='58px'></button>
+        </div>
+        <!-- map -->
+        <div style="margin-top:50px">
+            <button class="active map-overlay-menu" id="map_left"><img src="./wordchunk/media/map.svg" width="58px"></button>
+        </div>
+        <!-- Spinner -->
+        <div style="margin-top:50px">
+            <button class="active Spin-overlay-menu" id="spinner_left"><img src="./wordchunk/media/wheel.svg" width="58px"></button>
+        </div>  
+    </div>
+
+    <!-- Miniwindow for timer -->
+    <div class="mini" id="mini">
+        <img class ="minitimer" src="./Timer/media/tinytimer.svg" height="175px" width="546px">
+        <button id="play"><img src="./Timer/media/play.svg" height='48px'></button>
+        <button id="pause"><img src="./Timer/media/pause.svg" height='48px'></button>
+        <span id="minutes">02</span><span id="seconds">00</span>
+        <button id="maximize"><img src="./Timer/media/max.svg" height='38px'></button>
+        <button id="close"><img src="./media/close.svg" height='38px'></button>
+    </div>
+    <!-- Wheel of Fortune -->
+    <div id ="wheel">
+        <iframe id="wordchunk" src='./wordchunk/wordchunk.html' frameborder='0' scrolling='no' width="100%" height="100%"></iframe>
+    </div>
+    <!-- map -->
+    <div id="map">
+        <img src="./wordchunk/media/map.png">
+    </div>
+
+</body>
+
+</html>
+

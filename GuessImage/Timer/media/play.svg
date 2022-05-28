@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>play</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 47.9997 0 47.9997 47.9998 0 47.9998"></polygon>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Student-page-timer-Copy" transform="translate(-872.000000, -735.000000)">
+            <g id="play" transform="translate(872.000000, 735.000000)">
+                <g id="Group-3">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M23.9997,-0.0002 C37.2557,-0.0002 47.9997,10.7448 47.9997,23.9998 C47.9997,37.2548 37.2557,47.9998 23.9997,47.9998 C10.7447,47.9998 -0.0003,37.2548 -0.0003,23.9998 C-0.0003,10.7448 10.7447,-0.0002 23.9997,-0.0002" id="Fill-1" fill="#C1D357" mask="url(#mask-2)"></path>
+                </g>
+                <path d="M33.0954,21.7025 C35.3704,22.9715 35.3664,25.0305 33.0954,26.2965 L22.1184,33.0865 C19.8434,34.3555 18.0004,33.2725 18.0004,30.6665 L18.0004,17.3315 C18.0004,14.7265 19.8474,13.6455 22.1184,14.9115 L33.0954,21.7025 Z" id="Fill-4" fill="#67752B"></path>
+            </g>
+        </g>
+    </g>
+</svg>

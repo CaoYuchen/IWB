@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="36px" viewBox="0 0 66 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Timerbtn/1min</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.804 65.318 0.804 65.318 36 0 36"></polygon>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Student-page-timer" transform="translate(-825.000000, -412.000000)">
+            <g id="Timerbtn/1min" transform="translate(825.000000, 411.000000)">
+                <g id="Group-3" transform="translate(0.000000, 0.196500)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M53.318,36.0002 L12,36.0002 C5.373,36.0002 0,30.6272 0,24.0002 L0,12.8032 C0,6.1762 5.373,0.8032 12,0.8032 L53.318,0.8032 C59.945,0.8032 65.318,6.1762 65.318,12.8032 L65.318,24.0002 C65.318,30.6272 59.945,36.0002 53.318,36.0002" id="Fill-1" fill="#F7D488" mask="url(#mask-2)"></path>
+                </g>
+                <text id="1-min" font-family="SofiaProSoft-Bold, Sofia Pro Soft" font-size="16" font-weight="bold" fill="#AB8539">
+                    <tspan x="13.9951" y="22.8771676">1 min</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

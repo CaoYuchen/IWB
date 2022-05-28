@@ -1,0 +1,92 @@
+/*
+ * Legal Disclaimer
+ *
+ *  *  all EF Group websites
+ *
+ * It is strictly forbidden to download or use these fonts on any other website domain or media.
+ *
+ * While the @font-face statements below may be modified by the client, this
+ * disclaimer may not be removed.
+ *
+ * Lineto.com, 2018
+ */
+
+
+/*
+ *
+ * INSTRUCTIONS
+ *
+ * Copy the Legal Disclaimer and the @font-faces statements to your regular CSS file.
+ * The fonts folder(s) should be placed relative to the regular CSS file.
+ *
+ */
+
+@font-face {
+	font-family: "EFCircularWeb Black Web";
+	src: url("fonts/EFCircularWeb-Black.eot");
+	src: url("fonts/EFCircularWeb-Black.woff") format("woff"),
+		 url("fonts/EFCircularWeb-Black.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "EFCircularWeb Black Italic Web";
+	src: url("fonts/EFCircularWeb-BlackItalic.eot");
+	src: url("fonts/EFCircularWeb-BlackItalic.woff") format("woff"),
+		 url("fonts/EFCircularWeb-BlackItalic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "EFCircularWeb Bold Web";
+	src: url("fonts/EFCircularWeb-Bold.eot");
+	src: url("fonts/EFCircularWeb-Bold.woff") format("woff"),
+		 url("fonts/EFCircularWeb-Bold.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "EFCircularWeb Bold Italic Web";
+	src: url("fonts/EFCircularWeb-BoldItalic.eot");
+	src: url("fonts/EFCircularWeb-BoldItalic.woff") format("woff"),
+		 url("fonts/EFCircularWeb-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "EFCircularWeb Book Web";
+	src: url("fonts/EFCircularWeb-Book.eot");
+	src: url("fonts/EFCircularWeb-Book.woff") format("woff"),
+		 url("fonts/EFCircularWeb-Book.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "EFCircularWeb Book Italic Web";
+	src: url("fonts/EFCircularWeb-BookItalic.eot");
+	src: url("fonts/EFCircularWeb-BookItalic.woff") format("woff"),
+		 url("fonts/EFCircularWeb-BookItalic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "EFCircularWeb Light Web";
+	src: url("fonts/EFCircularWeb-Light.eot");
+	src: url("fonts/EFCircularWeb-Light.woff") format("woff"),
+		 url("fonts/EFCircularWeb-Light.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "EFCircularWeb Light Italic Web";
+	src: url("fonts/EFCircularWeb-LightItalic.eot");
+	src: url("fonts/EFCircularWeb-LightItalic.woff") format("woff"),
+		 url("fonts/EFCircularWeb-LightItalic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "EFCircularWeb Medium Web";
+	src: url("fonts/EFCircularWeb-Medium.eot");
+	src: url("fonts/EFCircularWeb-Medium.woff") format("woff"),
+		 url("fonts/EFCircularWeb-Medium.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "EFCircularWeb Medium Italic Web";
+	src: url("fonts/EFCircularWeb-MediumItalic.eot");
+	src: url("fonts/EFCircularWeb-MediumItalic.woff") format("woff"),
+		 url("fonts/EFCircularWeb-MediumItalic.woff2") format("woff2");
+}

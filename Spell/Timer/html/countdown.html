@@ -1,0 +1,57 @@
+<!-- <!doctype html>
+<html lang="en">
+
+<head> -->
+
+<!--     <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DownCount Plugin</title> -->
+    <link rel="stylesheet" href="../css/countdown.css"></link>
+<!-- </head> -->
+
+<!-- <body> -->
+<div class="count">
+    <div class="sample">
+        <button id="clock0"><img src="../media/clock1.svg" width="66px"/></button>
+        <!-- <p class="clock">1 Min</p> -->
+        <button id="clock1"><img src="../media/clock2.svg" width="66px"/></button>
+        <!-- <p class="clock">2 Mins</p> -->
+        <button id="clock2"><img src="../media/clock3.svg" width="66px"/></button>
+        <!-- <p class="clock">5 Mins</p> -->
+    </div>
+  
+    <div class="countdown" align="center">
+            <button class="tuneup" id="tuneMup"><img src="../media/up.svg"></button>
+            <button class="tuneup" id="tuneSup"><img src="../media/up.svg"></button>
+            <br>
+            <span class="minutes">02</span>
+            <span class="seconds">00</span>
+            <br>
+            <button class="tunedown" id="tuneMdown"><img src="../media/down.svg"></button>
+            <button class="tunedown" id="tuneSdown"><img src="../media/down.svg"></button>
+            <!-- <p class="minutes_ref">Minutes</p> -->
+            <!-- <p class="seconds_ref">Seconds</p> -->
+    </div>
+
+    <div class="workbtn" align="center">
+        <button class="example_a" id="start"><img src="../media/play.svg" width="48px"></button>
+        <button class="example_b" id="pause" style="display: none"><img src="../media/pause.svg" width="48px"></button>
+        <button class="example_c" id="reset"><img src="../media/reset.svg" width="48px"></button>
+    </div>
+</div>
+
+    <audio id="audio" src="../media/alarm.mp3"></audio>
+    <audio id="timeup" src="../media/timeup.mp3"></audio>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+  <!--   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+    <script type="text/javascript" src="../js/jquery.downCount.js"></script>
+    <script type="text/javascript">
+ 
+    $('.count').downCount({date: 120000},);
+
+    </script>
+<!-- </body>
+
+</html> -->

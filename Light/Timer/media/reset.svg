@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Timerbtn/reset</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.0002 0 48 0 48 48 0.0002 48"></polygon>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Student-page-timer" transform="translate(-1019.000000, -655.000000)">
+            <g id="Timerbtn/reset" transform="translate(1019.000000, 655.000000)">
+                <g id="Group-3">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M24.0002,0 C37.2552,0 48.0002,10.745 48.0002,24 C48.0002,37.255 37.2552,48 24.0002,48 C10.7452,48 0.0002,37.255 0.0002,24 C0.0002,10.745 10.7452,0 24.0002,0" id="Fill-1" fill="#F7D488" mask="url(#mask-2)"></path>
+                </g>
+                <g id="Group-8" transform="translate(15.000000, 9.000000)">
+                    <path d="M9.0002,6.5376 C13.6742,6.5376 17.4622,10.3266 17.4622,14.9996 C17.4622,19.6736 13.6742,23.4626 9.0002,23.4626 C4.3262,23.4626 0.5372,19.6736 0.5372,14.9996" id="Stroke-4" stroke="#A58646" stroke-width="3.219" stroke-linecap="round"></path>
+                    <path d="M3.4285,7.125 L8.3205,11.913 C8.9545,12.533 10.0235,12.084 10.0235,11.197 L10.0235,1.621 C10.0235,0.733 8.9545,0.284 8.3205,0.905 L3.4285,5.693 C3.0265,6.086 3.0265,6.732 3.4285,7.125" id="Fill-6" fill="#A58646"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

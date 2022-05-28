@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>unselected5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.000222580645 0.342106452 45.6574484 0.342106452 45.6574484 46 0.000222580645 46"></polygon>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="v" transform="translate(-94.000000, -943.000000)">
+            <g id="unselected5" transform="translate(94.000000, 943.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-8"></g>
+                <path d="M45.6574484,23.1714613 C45.6574484,35.779171 35.4365452,46.0000742 22.8288355,46.0000742 C10.2211258,46.0000742 0.000222580645,35.779171 0.000222580645,23.1714613 C0.000222580645,10.5630097 10.2211258,0.342106452 22.8288355,0.342106452 C35.4365452,0.342106452 45.6574484,10.5630097 45.6574484,23.1714613" id="Fill-7" fill="#ED2F4B" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

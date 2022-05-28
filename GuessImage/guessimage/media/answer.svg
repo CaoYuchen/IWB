@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M7.5,7 L8.5,7 C9.05228475,7 9.5,7.44771525 9.5,8 L9.5,13 C9.5,13.5522847 9.05228475,14 8.5,14 L7.5,14 C6.94771525,14 6.5,13.5522847 6.5,13 L6.5,8 C6.5,7.44771525 6.94771525,7 7.5,7 Z M6.5,3.51111111 C6.5,2.66666667 7.16666667,2 7.98888889,2 C8.83333333,2 9.5,2.66666667 9.5,3.51111111 C9.5,4.33333333 8.83333333,5 7.98888889,5 C7.16666667,5 6.5,4.33333333 6.5,3.51111111 Z" id="path-1"></path>
+    </defs>
+    <g id="Book-C-U3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Book-D-Unit-3-flashcard" transform="translate(-946.000000, -872.000000)">
+            <g id="Group" transform="translate(947.000000, 873.000000)">
+                <g id="icons/info" transform="translate(5.000000, 5.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Info" fill="#191919" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <g id="Color/black" mask="url(#mask-2)" fill="#4A4A4A" fill-rule="evenodd">
+                        <rect x="0" y="0" width="16" height="16"></rect>
+                    </g>
+                </g>
+                <circle id="Oval" stroke="#4A4A4A" stroke-width="2" cx="13" cy="13" r="13"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

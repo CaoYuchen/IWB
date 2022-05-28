@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Furniture</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script type="text/javascript" src="./js/jQuery-3.3.1.js"></script>
+
+    <link type="text/css" href="./css/furniture.css" rel='stylesheet'>
+    <link type="text/css" href="./css/dragula.css" rel='stylesheet'>
+    <link type="text/css" href="./css/animate.css" rel='stylesheet'>
+    <script type="text/javascript" src="./js/dragula.min.js"></script>
+    <script type="text/javascript" src="./js/furniture.js"></script>
+</head>
+
+
+<body>
+
+    <!-- Slideshow container -->
+    <div class="slideshow">
+
+        <!-- <img id="tag" class="fade" src="./media/1.svg" style="width:78px;height:78px"> -->
+        <div id="tag"><span id="tagNumber">1</span><span>/4</span></div>
+
+        <!-- Next and previous buttons -->
+        <button id="prev" ><img src="./media/left.svg" height='53px'></button>
+        <button id="next" ><img src="./media/right.svg" height='53px'></button>
+
+        <!-- Full-width images with number and caption text -->
+        <div id="slide1" class="slides fade">
+            <div class="roomBox">
+                <div class="roomLeft">
+                    <img class="background" src="./media/room/1.png">
+                    <img class="check" src="./media/greencheck.svg">
+                    <img class="furnitureOn" data-sign="5" src="./media/room/toiletlayer.png">
+                    <img class="furnitureOn" data-sign="3" src="./media/room/washingMachinelayer.png">
+                </div>
+                <div class="roomRight">
+                    <img class="background" src="./media/room/2.png">
+                    <img class="check" src="./media/greencheck.svg">
+                    <img class="furnitureOn" data-sign="4" src="./media/room/bookcaselayer.png">
+                    <img class="furnitureOn" data-sign="1" src="./media/room/chairlayer.png">        
+                    <img class="furnitureOn" data-sign="2" src="./media/room/bedlayer.png">
+                </div>
+            </div>
+            <div class="furnitureBox">
+                <img class="furniture" data-sign="1" src="./media/furniture/chair.png" width="68px">
+                <img class="furniture" data-sign="2" src="./media/furniture/bed.png">
+                <img class="furniture" data-sign="3" src="./media/furniture/washingMachine.png">
+                <img class="furniture" data-sign="4" src="./media/furniture/bookcase.png">
+                <img class="furniture" data-sign="5" src="./media/furniture/toilet.png">
+            </div>
+        </div>
+        <div id="slide2" class="slides fade">
+            <div class="roomBox">
+                <div class="roomLeft">
+                    <img class="background" src="./media/room/3.png">
+                    <img class="check" src="./media/greencheck.svg">
+                    <img class="furnitureOn" data-sign="3" src="./media/room/stovelayer.png">
+                    <img class="furnitureOn" data-sign="1" src="./media/room/fridgelayer.png">
+                </div>
+                <div class="roomRight">
+                    <img class="background" src="./media/room/4.png">
+                    <img class="check" src="./media/greencheck.svg">
+                    <img class="furnitureOn" data-sign="2" src="./media/room/lamplayer.png">
+                    <img class="furnitureOn" data-sign="4" src="./media/room/TVlayer.png">
+                    <img class="furnitureOn" data-sign="5" src="./media/room/sofalayer.png">
+                </div>
+            </div>
+            <div class="furnitureBox">
+                <img class="furniture" data-sign="1" src="./media/furniture/fridge.png">
+                <img class="furniture" data-sign="2" src="./media/furniture/lamp.png">
+                <img class="furniture" data-sign="3" src="./media/furniture/stove.png">
+                <img class="furniture" data-sign="4" src="./media/furniture/TV.png">
+                <img class="furniture" data-sign="5" src="./media/furniture/sofa.png">
+            </div>
+        </div>
+        <div id="slide3" class="slides fade">
+            <div class="roomBox">
+                <div class="roomLeft">
+                    <img class="background" src="./media/room/5.1.png">
+                    <img class="check" src="./media/greencheck.svg">
+                    <img class="background" src="./media/room/5.2.png" style="z-index: 3!important">
+                    <img class="check" src="./media/greencheck.svg">
+                    <img class="furnitureOn" data-sign="4" src="./media/room/bedlayer.png" style="z-index: 4 !important">
+                    <img class="furnitureOn" data-sign="5" src="./media/room/chairlayer.png">
+                    <img class="furnitureOn" data-sign="2" src="./media/room/closetlayer.png">
+                </div>
+                <div class="roomRight">
+                    <img class="background" src="./media/room/6.png">
+                    <img class="check" src="./media/greencheck.svg">
+                    <img class="furnitureOn" data-sign="1" src="./media/room/fridgelayer.png">
+                    <img class="furnitureOn" data-sign="3" src="./media/room/stovelayer.png">
+                </div>
+            </div>
+            <div class="furnitureBox">
+                <img class="furniture" data-sign="1" src="./media/furniture/fridge.png">
+                <img class="furniture" data-sign="2" src="./media/furniture/closet.png">
+                <img class="furniture" data-sign="3" src="./media/furniture/stove.png">
+                <img class="furniture" data-sign="4" src="./media/furniture/bed.png">
+                <img class="furniture" data-sign="5" src="./media/furniture/chair.png">
+            </div>
+        </div>
+        <div id="slide4" class="slides fade">
+            <div class="roomBox">
+                <div class="roomLeft">
+                    <img class="background" src="./media/room/7.png">
+                    <img class="check" src="./media/greencheck.svg">
+                    <img class="furnitureOn" data-sign="2" src="./media/room/toiletlayer.png">
+                    <img class="furnitureOn" data-sign="1" src="./media/room/washingMachinelayer.png">
+                </div>
+                <div class="roomRight">
+                    <img class="background" src="./media/room/8.png">
+                    <img class="check" src="./media/greencheck.svg">
+                    <img class="furnitureOn" data-sign="3" src="./media/room/lamplayer.png">
+                    <img class="furnitureOn" data-sign="4" src="./media/room/sofalayer.png">
+                    <img class="furnitureOn" data-sign="5" src="./media/room/TVlayer.png">
+                </div>
+            </div>
+            <div class="furnitureBox">
+                <img class="furniture" data-sign="1" src="./media/furniture/washingMachine.png">
+                <img class="furniture" data-sign="2" src="./media/furniture/toilet.png">
+                <img class="furniture" data-sign="3" src="./media/furniture/lamp.png">
+                <img class="furniture" data-sign="4" src="./media/furniture/sofa.png">
+                <img class="furniture" data-sign="5" src="./media/furniture/TV.png">
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="26px" viewBox="0 0 30 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>timerbtn/adjust arrow down</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.0005 29.1815146 0.0005 29.1815146 25.4865 0 25.4865"></polygon>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Student-page-timer" transform="translate(-814.000000, -599.000000)">
+            <g id="timerbtn/adjust-arrow-down" transform="translate(829.000000, 612.000000) scale(1, -1) translate(-829.000000, -612.000000) translate(814.000000, 599.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M11.1054,2.5866 C13.0294,-0.8654 16.1534,-0.8594 18.0744,2.5866 L28.3764,19.2386 C30.3004,22.6906 28.6584,25.4866 24.7044,25.4866 L4.4754,25.4866 C0.5224,25.4866 -1.1176,22.6846 0.8034,19.2386 L11.1054,2.5866 Z" id="Fill-1" fill="#23809E" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

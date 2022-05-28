@@ -1,0 +1,563 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>GuessImage</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script type="text/javascript" src="./js/jQuery-3.3.1.js"></script>
+
+    <link type="text/css" href="./css/guessimage.css" rel='stylesheet'>
+    <script type="text/javascript" src="./js/guessimage.js"></script>
+    <script type="text/javascript" src="./js/jquery.flip.min.js"></script>
+</head>
+
+
+<body>
+
+    <!-- Slideshow container -->
+    <div class="slideshow">
+
+        <!-- <img id="tag" class="fade" src="./media/1.svg" style="width:78px;height:78px"> -->
+        <div id="tag"><span id="tagNumber">1</span><span>/12</span></div>
+
+        <!-- Next and previous buttons -->
+        <button id="prev" ><img src="./media/left.svg" height='53px'></button>
+        <button id="next" ><img src="./media/right.svg" height='53px'></button>
+
+        <!-- Full-width images with number and caption text -->
+        <div id="slide1" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/1/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/1/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/1/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/1/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/1/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/1/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/1/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/1/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/1/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide2" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/2/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/2/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/2/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/2/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/2/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/2/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/2/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/2/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/2/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide3" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/3/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/3/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/3/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/3/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/3/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/3/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/3/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/3/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/3/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide4" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/4/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/4/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/4/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/4/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/4/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/4/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/4/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/4/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/4/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide5" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/5/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/5/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/5/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/5/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/5/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/5/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/5/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/5/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/5/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide6" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/6/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/6/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/6/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/6/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/6/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/6/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/6/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/6/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/6/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide7" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/7/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/7/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/7/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/7/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/7/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/7/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/7/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/7/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/7/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide8" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/8/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/8/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/8/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/8/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/8/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/8/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/8/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/8/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/8/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide9" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/9/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/9/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/9/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/9/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/9/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/9/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/9/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/9/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/9/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide10" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/10/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/10/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/10/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/10/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/10/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/10/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/10/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/10/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/10/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide11" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/11/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/11/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/11/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/11/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/11/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/11/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/11/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/11/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/11/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+        <div id="slide12" class="slides fade">
+            <div class="imageBox">
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/12/HFDW_OL-01.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/12/HFDW_OL-02.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/12/HFDW_OL-03.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/12/HFDW_OL-04.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/12/HFDW_OL-05.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/12/HFDW_OL-06.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/12/HFDW_OL-07.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/yellow.svg"></div>
+                    <div class="back"><img src="./media/12/HFDW_OL-08.jpg"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="./media/blue.svg"></div>
+                    <div class="back"><img src="./media/12/HFDW_OL-09.jpg"></div>                   
+            	</div>
+            </div>
+            <div class="answerBox">
+                <img src="./media/answer.svg" width="40px">
+                <span>Answer</span>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>WordChunk</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script type="text/javascript" src="./js/jQuery-3.3.1.js"></script>
+
+    <link type="text/css" href="./css/wordchunk.css" rel='stylesheet'>
+    <link type="text/css" href="./css/dragula.css" rel='stylesheet'>
+    <link type="text/css" href="./css/animate.css" rel='stylesheet'>
+    <script type="text/javascript" src="./js/dragula.min.js"></script>
+    <script type="text/javascript" src="./js/wordchunk.js"></script>
+</head>
+
+
+<body>
+
+    <!-- Slideshow container -->
+    <div class="slideshow">
+
+        <!-- <img id="tag" class="fade" src="./media/1.svg" style="width:78px;height:78px"> -->
+        <div id="tag"><span id="tagNumber">1</span><span>/16</span></div>
+
+        <!-- Next and previous buttons -->
+        <button id="prev" ><img src="./media/left.svg" height='53px'></button>
+        <button id="next" ><img src="./media/right.svg" height='53px'></button>
+
+        <!-- Full-width images with number and caption text -->
+        <div id="slide1" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/4dot.svg" width="164px" height="50px" data-sign="1">
+                <span>Tom</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>likes to sing.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide2" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/3dot.svg" width="164px" height="50px" data-sign="2">
+                <span>Tom</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>eats cupcakes in the evening.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide3" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/2dot.svg" width="164px" height="50px" data-sign="3">
+                <span>Tom</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>rides his bike at the park.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide4" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/1dot.svg" width="164px" height="50px" data-sign="4">
+                <span>Tom</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>plays the drums on the weeekend.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide5" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/0dot.svg" width="164px" height="50px" data-sign="5">
+                <span>Tom</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>makes jewelery.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide6" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/4dot.svg" width="164px" height="50px" data-sign="1">
+                <span>Clora</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>likes to take photos.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide7" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/3dot.svg" width="164px" height="50px" data-sign="2">
+                <span>Clora</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>eats ice-cream in the afternoon.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide8" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/3dot.svg" width="164px" height="50px" data-sign="2">
+                <span>Clora</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>watches movies on Fridays.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide9" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/4dot.svg" width="164px" height="50px" data-sign="1">
+                <span>Clora</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>flies her kite at the beach.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide10" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/0dot.svg" width="164px" height="50px" data-sign="5">
+                <span>Clora</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>plays video games.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide11" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/4dot.svg" width="164px" height="50px" data-sign="1">
+                <span>Clora</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>collects stamps on weekends.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide12" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/2dot.svg" width="164px" height="50px" data-sign="3">
+                <span>Mo</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>plays frisbee on Mondays.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide13" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/0dot.svg" width="164px" height="50px" data-sign="5">
+                <span>Mo</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>collects shells at the beach.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide14" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/3dot.svg" width="164px" height="50px" data-sign="2">
+                <span>Mo</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>likes to play the violin.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide15" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/4dot.svg" width="164px" height="50px" data-sign="1">
+                <span>Mo</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>eats pizza on Wednesdays.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+        <div id="slide16" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox">
+                <img src="./media/4dot.svg" width="164px" height="50px" data-sign="1">
+                <span>Mo</span>
+                <div class="blank"><p>_ _ _ _ _ _ _ _</p></div>
+                <span>takes photos at the park.</span>
+            </div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">always</span>
+                <span class="snippet" data-order="2">usually</span>
+                <span class="snippet" data-order="3">often</span>
+                <span class="snippet" data-order="4">sometimes</span>
+                <span class="snippet" data-order="5">never</span>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

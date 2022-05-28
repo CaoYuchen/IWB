@@ -1,0 +1,156 @@
+button {
+    outline: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+@font-face {
+  font-family: EducationVAGRounded-Bold;
+  src: url(EducationVAGRounded-Bold.ttf);
+}
+
+body{
+    font-family: EducationVAGRounded-Bold;
+}
+/* Slideshow container */
+.slideshow {
+    /*position: absolute;*/
+    /*top: 1%;*/
+    /*left: 50%;*/
+    width:1250px;
+    margin:40px auto;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Hide the images by default */
+.slides {
+    display: none;
+    /*position: absolute;*/
+    top:10px;
+}
+
+.roomBox{
+    /*text-align: center;*/
+    justify-content: center;
+    /*align-content: center;*/
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    width:1200px;
+    height: 450px;
+    margin:10px auto;
+}
+
+.roomLeft, .roomRight{
+    position: static;
+    width:550px;
+    height: 441px;
+    margin:10px;
+}
+
+.background{
+    position: absolute;
+    border-radius: 16px;
+    margin-left: -275px;
+    z-index: 1;
+    width: 550px;
+}
+
+.furnitureOn{
+    position: absolute;
+    border-radius: 16px;
+    /*margin-left: -275px;*/
+    z-index: 2;
+    width: 550px;
+    display: none;
+}
+
+.furnitureBox{
+    justify-content: center;
+    /*text-align: center;*/
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-self: center;
+    width:1250px;
+    height: 280px;
+    margin:30px auto;
+    background-color: #f3f9fd;
+    border-radius: 16px;
+    border: dashed 1px #979797;   
+}
+
+.furniture{
+    padding: 10px 20px;
+    margin:0px 20px;
+    cursor: pointer;
+}
+
+.roomBox .furniture{
+    position: absolute;
+}
+
+
+#tag {
+    /*position: absolute;*/
+    top:30px;
+    /*left:50%;*/
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 24px;
+}
+/* Next & previous buttons */
+#prev {
+    position: absolute;
+    margin-top: 265px;
+    margin-left: -670px;
+}
+
+#next {
+    position: absolute;
+    margin-top: 265px;
+    margin-left: 590px;
+}
+
+.check{
+    position: absolute;
+    margin-top: -15px;
+    margin-left: 520px;
+    z-index: 100;
+    display: none;
+    width: 48px;
+}
+
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}

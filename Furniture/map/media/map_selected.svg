@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="54px" viewBox="0 0 50 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>graphic 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.999,25 C0.999,38.735 12.079,49.885 25.788,50 L25.788,50 L26.211,50 C39.922,49.885 51,38.735 51,25 L51,25 C51,11.191 39.808,0 26,0 L26,0 C12.192,0 0.999,11.191 0.999,25 L0.999,25 Z M4,25 C4,12.869 13.87,3 26,3 L26,3 C38.131,3 48,12.869 48,25 L48,25 C48,37.131 38.131,47 26,47 L26,47 C13.87,47 4,37.131 4,25 L4,25 Z" id="path-1"></path>
+    </defs>
+    <g id="graphic-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-9" transform="translate(-1.000000, 2.000000)">
+            <g id="Group-5" transform="translate(4.000000, 10.000000)" stroke="#2A7FE1" stroke-linejoin="round" stroke-width="2">
+                <path d="M32.4369,4.1804 C32.4369,6.1654 30.8269,7.7754 28.8419,7.7754 C26.8559,7.7754 25.2459,6.1654 25.2459,4.1804 C25.2459,2.1944 26.8559,0.5844 28.8419,0.5844 C30.8269,0.5844 32.4369,2.1944 32.4369,4.1804 Z" id="Stroke-1"></path>
+                <polyline id="Stroke-3" points="0.9408 26.1804 14.1478 11.7304 23.8258 26.6624 31.3618 17.2614 42.0658 27.5584"></polyline>
+            </g>
+            <g id="Group-8">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-7"></g>
+                <polygon id="Fill-6" fill="#2A7FE1" mask="url(#mask-2)" points="-4 55 56 55 56 -5 -4 -5"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

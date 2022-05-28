@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Sentence</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script type="text/javascript" src="./js/jQuery-3.3.1.js"></script>
+
+    <link type="text/css" href="./css/sentence.css" rel='stylesheet'>
+    <link type="text/css" href="./css/dragula.css" rel='stylesheet'>
+    <link type="text/css" href="./css/animate.css" rel='stylesheet'>
+    <script type="text/javascript" src="./js/sentence.js"></script>
+    <script type="text/javascript" src="./js/dragula.min.js"></script>
+</head>
+
+
+<body>
+
+    <!-- Slideshow container -->
+    <div class="slideshow">
+
+        <!-- <img id="tag" class="fade" src="./media/1.svg" style="width:78px;height:78px"> -->
+        <div id="tag"><span id="tagNumber">1</span><span>/8</span></div>
+
+        <!-- Next and previous buttons -->
+        <button id="prev" ><img src="./media/left.svg" height='53px'></button>
+        <button id="next" ><img src="./media/right.svg" height='53px'></button>
+
+        <!-- Full-width images with number and caption text -->
+        <div id="slide1" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox"></div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">Clora</span>
+                <span class="snippet" data-order="2">goes shopping</span>
+                <span class="snippet" data-order="3">after</span>
+                <span class="snippet" data-order="4">she plays</span>
+                <span class="snippet" data-order="5">table tennis.</span>
+            </div>
+        </div>
+        <div id="slide2" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox"></div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">Jones</span>
+                <span class="snippet" data-order="2">goes cycling</span>
+                <span class="snippet" data-order="3">before</span>
+                <span class="snippet" data-order="4">he reads</span>
+                <span class="snippet" data-order="5">science books</span>
+                <span class="snippet" data-order="6">and</span>
+                <span class="snippet" data-order="7">eats dinner.</span>
+            </div>
+        </div>
+        <div id="slide3" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox"></div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">Clarence</span>
+                <span class="snippet" data-order="2">gets up</span>
+                <span class="snippet" data-order="3">and</span>
+                <span class="snippet" data-order="4">has a shower</span>
+                <span class="snippet" data-order="5">before</span>
+                <span class="snippet" data-order="6">Mo gets up.</span>
+            </div>
+        </div>
+        <div id="slide4" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox"></div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">She</span>
+                <span class="snippet" data-order="2">goes</span>
+                <span class="snippet" data-order="3">to the lake</span>
+                <span class="snippet" data-order="4">and</span>
+                <span class="snippet" data-order="5">eats</span>
+                <span class="snippet" data-order="6">ice-cream</span>
+                <span class="snippet" data-order="7">after</span>
+                <span class="snippet" data-order="8">history class.</span>
+            </div>
+        </div>
+        <div id="slide5" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox"></div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">In</span>
+                <span class="snippet" data-order="2">the evening</span>
+                <span class="snippet" data-order="3">Tom</span>
+                <span class="snippet" data-order="4">plays soccer</span>
+                <span class="snippet" data-order="5">before</span>
+                <span class="snippet" data-order="6">he has</span>
+                <span class="snippet" data-order="7">a rest.</span>
+            </div>
+        </div>
+        <div id="slide6" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox"></div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">They</span>
+                <span class="snippet" data-order="2">brush their teeth</span>
+                <span class="snippet" data-order="3">and</span>
+                <span class="snippet" data-order="4">have breakfast</span>
+                <span class="snippet" data-order="5">in</span>
+                <span class="snippet" data-order="6">the morning.</span>
+            </div>
+        </div>
+        <div id="slide7" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox"></div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">I have</span>
+                <span class="snippet" data-order="2">science</span>
+                <span class="snippet" data-order="3">from</span>
+                <span class="snippet" data-order="4">10</span>
+                <span class="snippet" data-order="5">to 11</span>
+                <span class="snippet" data-order="6">before</span>
+                <span class="snippet" data-order="7">I have music class.</span>
+            </div>
+        </div>
+        <div id="slide8" class="slides fade">
+            <div class="check"><img src="./media/greencheck.svg" width="48px"></div>
+            <div class="textBox"></div>
+            <div class="wordBox">
+                <span class="snippet" data-order="1">Fleet</span>
+                <span class="snippet" data-order="2">has</span>
+                <span class="snippet" data-order="3">breakfast</span>
+                <span class="snippet" data-order="4">before</span>
+                <span class="snippet" data-order="5">he plays</span>
+                <span class="snippet" data-order="6">sports</span>
+                <span class="snippet" data-order="7">and</span>
+                <span class="snippet" data-order="8">watches TV.</span>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
