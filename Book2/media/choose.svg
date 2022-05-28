@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39px" height="27px" viewBox="0 0 39 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/tick</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 39 0 39 27 0 27"></polygon>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Student-page-create-new-input-name" transform="translate(-985.000000, -749.000000)">
+            <g id="Icon/close-Copy-2" transform="translate(984.000000, 742.000000)">
+                <g id="Group-3" transform="translate(1.000000, 7.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M37.6647263,1.30652926 C35.8872892,-0.433052716 33.0067881,-0.435506288 31.2251728,1.29916855 L31.2243371,1.29835069 L15.9393806,16.2226064 L7.77503616,8.23214288 L7.77420051,8.23296074 C5.99258511,6.49910376 3.1129197,6.50073947 1.33464693,8.24032145 C-0.442790196,9.98072128 -0.444461505,12.7990567 1.32712604,14.542728 L1.32629038,14.5435458 L9.48311396,22.5266486 L9.48311396,22.5274665 L12.7246178,25.6999341 C14.4602722,27.3986232 17.239659,27.428066 19.0287953,25.8152519 L37.6730829,7.60975365 L37.6722472,7.6089358 C39.4446704,5.86526454 39.4429991,3.04692909 37.6647263,1.30652926" id="Fill-1" fill="#4A4A4A" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
