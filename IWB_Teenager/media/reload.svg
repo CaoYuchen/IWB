@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="36px" viewBox="0 0 42 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_settings_backup_restore</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M28,24 C28,21.8 26.2,20 24,20 C21.8,20 20,21.8 20,24 C20,26.2 21.8,28 24,28 C26.2,28 28,26.2 28,24 L28,24 Z M24,6 C14.06,6 6,14.06 6,24 L0,24 L8,32 L16,24 L10,24 C10,16.26 16.26,10 24,10 C31.74,10 38,16.26 38,24 C38,31.74 31.74,38 24,38 C20.98,38 18.18,37.02 15.88,35.4 L13.04,38.28 C16.08,40.6 19.88,42 24,42 C33.94,42 42,33.94 42,24 C42,14.06 33.94,6 24,6 L24,6 Z" id="path-1"></path>
+        <rect id="path-3" x="0" y="0" width="100" height="100"></rect>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Groups-page-select-group" transform="translate(-750.000000, -129.000000)">
+            <g id="ic_settings_backup_restore" transform="translate(750.000000, 123.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g id="Colors/Black" mask="url(#mask-2)">
+                    <g transform="translate(-26.000000, -26.000000)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="Black" stroke="none" fill="#4A4A4A" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
